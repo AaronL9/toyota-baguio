@@ -1,0 +1,44 @@
+<?php
+
+namespace App\Models;
+
+use CodeIgniter\Model;
+
+class VehiclesModel extends Model
+{
+    protected $table            = 'vehicles';
+    protected $primaryKey       = 'vehicle_no';
+    protected $returnType       = 'object';
+    protected $allowedFields    = [
+        "vcat_no",
+        "vehicle_title",
+        "vehicle_tagline",
+        "vehicle_encode",
+        "vehicle_encode_date",
+        "vehicle_inactive",
+        "vehicle_delete"
+    ];
+
+    public function getVehiclePhotos()
+    {
+        $data = $this
+            ->select(
+                [
+                    'vehicles.vehicle_title',
+                    'vehicles.vehicle_tagline',
+                    'photos.*, variants.*',
+                ]
+            )
+            ->join("variants", "vehicles.vehicle_no = variants.vehicle_no", "left")
+            ->join("photos", "photos.variant_no = variants.variant_no", "left")
+            ->where([
+                'vehicles.vehicle_delete' => 0,
+                'vehicles.vehicle_inactive' => 0
+            ])
+            ->groupBy('vehicles.vehicle_no')
+            ->orderBy('RAND()')
+            ->findAll(4);
+
+        return $data;
+    }
+}
