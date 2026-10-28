@@ -2,23 +2,45 @@
 <?= $this->section("mainContent"); ?>
 
 <!-- Carousel -->
-<div data-hs-carousel='{
+<section id="home" data-hs-carousel='{
     "loadingClasses": "opacity-0",
-    "isAutoPlay": true
+    "isInfiniteLoop": true
   }' class="relative">
-    <div class="hs-carousel relative overflow-hidden w-full h-75 sm:h-100 md:h-125 lg:h-150 shadow-lg">
+    <div class="hs-carousel relative h-screen w-full overflow-hidden bg-gray-900">
         <div
-            class="hs-carousel-body absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0">
-            <?php foreach ($banners as $row): ?>
-                <div class="hs-carousel-slide relative">
-                    <img src="/img/banners/<?= $row->banner_photo ?>" class="w-full h-full object-cover"
-                        alt="Toyota Service" />
+            class="hs-carousel-body absolute bottom-0 start-0 top-0 flex flex-nowrap opacity-0 transition-transform duration-700">
+
+
+            <!-- Slide 1 -->
+            <div class="hs-carousel-slide">
+                <div class="relative h-full">
+                    <img src="/img/carousel1.jpg" alt="Mountain landscape" class="h-full w-full object-cover" />
+                    <div class="absolute inset-0 flex items-center justify-center px-16 text-center text-white">
+                    </div>
                 </div>
-            <?php endforeach; ?>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="hs-carousel-slide">
+                <div class="relative h-full">
+                    <img src="/images/slide-2.jpg" alt="Beach at sunset" class="h-full w-full object-cover" />
+
+                    <div class="absolute inset-0 bg-black/40"></div>
+
+                    <div class="absolute inset-0 flex items-center justify-center px-16 text-center text-white">
+                        <div>
+                            <h2 class="text-4xl font-bold md:text-6xl">
+                                Discover beautiful places
+                            </h2>
+                            <p class="mt-4 text-lg">Make every journey memorable.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Prev -->
+    <!-- Previous -->
     <button type="button"
         class="hs-carousel-prev absolute inset-y-0 start-0 flex items-center justify-center w-12 text-white hover:bg-black/30 transition">
         <svg class="size-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -33,10 +55,7 @@
             <path d="m9 18 6-6-6-6" />
         </svg>
     </button>
-
-    <!-- dots -->
-    <div class="hs-carousel-pagination flex justify-center absolute bottom-4 start-0 end-0 gap-2"></div>
-</div>
+</section>
 
 <!-- Vehicle Cards Section -->
 <section class="py-16 md:py-24 bg-base-100 bg-gray-200">
@@ -54,6 +73,8 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+
             <!-- Vehicle Cards -->
             <?php foreach ($vehicles as $row): ?>
                 <div class="group flex flex-col overflow-hidden bg-gray-100 shadow-lg">

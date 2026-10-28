@@ -1,6 +1,6 @@
 services:
   server:
-    container_name: toyotailocossur
+    container_name: toyotadagupan
     build:
       context: ./ # The directory to use as build context (current folder)
       target: backend-dev # Dockerfile build stage to target (multi-stage build)
@@ -21,7 +21,7 @@ services:
   db:
     platform: linux/x86_64 # Ensure architecture compatibility on MacBook Pro
     image: mysql:8.0.16 # Use MySQL 8.0.16 official image
-    container_name: mysql # Name the container "mysql"
+    container_name: mysql-dagupan # Name the container "mysql"
     command:
       --sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
       # Custom SQL mode settings for strict behavior

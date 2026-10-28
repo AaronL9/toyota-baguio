@@ -4,14 +4,14 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   plugins: [tailwindcss()],
   root: "resources",
-  base: '/dist/',
+  base: "/dist/",
 
   server: {
     cors: {
       origin: "http://localhost:8081",
     },
 
-    origin: 'http://localhost:5173'
+    origin: "http://localhost:5174",
   },
 
   build: {
