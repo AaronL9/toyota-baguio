@@ -1,3 +1,13 @@
+<?php
+
+use App\Libraries\Vite;
+
+$vite = new Vite();
+$tags = $vite->tags(
+    "main.ts",
+)
+?>
+
 <!DOCTYPE html>
 <html lang="en" data-page="<?= isset($page) ? $page : "" ?>">
 
@@ -8,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="/favicon.ico">
     <base href="<?= base_url() ?>">
-    <?= vite_css("main.ts") ?>
+    <?= $tags->css ?>
 </head>
 
 <body class=" flex flex-col min-h-screen">
@@ -166,14 +176,7 @@
         updateHeader();
     </script>
 
-    <?php if (getenv("CI_ENVIRONMENT") === 'development'): ?>
-        <script type="module" src="http://localhost:5174/dist/@vite/client"></script>
-        <script type="module" src="http://localhost:5174/dist/main.ts"></script>
-
-        <!-- Vite HMR + JS -->
-    <?php else: ?>
-        <script type="module" src="dist/<?= vite_asset('main.ts'); ?>"></script>
-    <?php endif; ?>
+    <?= $tags->js ?>
 </body>
 
 </html>

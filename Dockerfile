@@ -12,12 +12,6 @@
 # Use official PHP CLI image
 FROM php:8.3.6-cli AS backend-dev
 
-ARG UID
-ARG GID
- 
-ENV UID=${UID}
-ENV GID=${GID}
-
 WORKDIR /var/www/html
 
 # Install system dependencies, PHP extensions, then clean up in one layer
@@ -25,23 +19,17 @@ RUN apt-get update && apt-get install -y \
     unzip git zip libzip-dev libicu-dev libonig-dev && \
     docker-php-ext-install intl mbstring zip mysqli pcntl
 
-# Create user FIRST
-RUN groupadd -g ${GID} codeigniter \
-    && useradd -u ${UID} -g codeigniter -s /bin/sh -m codeigniter
-
 # Install Composer
 COPY --from=composer:lts /usr/bin/composer /usr/bin/composer
 
 # Copy composer files first (better caching)
-COPY --chown=codeigniter:codeigniter composer.json composer.lock ./
-
-USER codeigniter
+COPY composer.json composer.lock ./
 
 # Install PHP dependencies
 RUN composer install --no-interaction
 
 # Copy app files with correct ownership
-COPY --chown=codeigniter:codeigniter . .
+COPY . .
 
 EXPOSE 8080
 
