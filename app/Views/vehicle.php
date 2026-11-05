@@ -1,22 +1,26 @@
-<?php
-
-/** @var object $cc */
-/** @var array $variants */
-/** @var array $gallery */
-?>
-
 <?= $this->extend("layout/default"); ?>
 <?= $this->section("mainContent"); ?>
+
+
+<section class="relative bg-black text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <h1 class="text-4xl md:text-5xl font-bold mt-4 mb-4">Schedule Now</h1>
+    </div>
+</section>
 
 <div x-data="vehiclePage()">
     <!-- Main Layout -->
     <main class="flex-1 max-w-7xl mx-auto px-6 md:px-8 py-16 md:py-20">
-        <div x-data="{ activeImage: '/img/variants/<?= $cc->variant_filename ?>', isLoading: true, activeName:  '<?= $cc->color_title ?>'}" class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start lg:items-center">
+        <div x-data="{ activeImage: '/img/variants/<?= $cc->variant_filename ?>', isLoading: true}"
+            class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start lg:items-center">
             <!-- Left: Vehicle Image -->
             <div class="w-full flex justify-center">
                 <div class="w-full max-w-4xl aspect-21/9 lg:aspect-video flex justify-center items-center">
-                    <img @load="isLoading = false" x-cloak x-show="!isLoading" :src="activeImage" class="w-full h-full object-contain" alt="" />
-                    <div x-show="isLoading" class="m-auto animate-spin inline-block size-8 border-3 border-current border-t-transparent rounded-[999px] text-primary" role="status" aria-label="loading">
+                    <img @load="isLoading = false" x-cloak x-show="!isLoading" :src="activeImage"
+                        class="w-full h-full object-contain" alt="" />
+                    <div x-show="isLoading"
+                        class="m-auto animate-spin inline-block size-8 border-3 border-current border-t-transparent rounded-[999px] text-primary"
+                        role="status" aria-label="loading">
                         <span class="sr-only">Loading...</span>
                     </div>
                 </div>
@@ -29,15 +33,14 @@
                     <p class="text-xs tracking-widest text-gray-500 mb-3">
                         EXPLORE COLORS*
                     </p>
-                    <div class="flex justify-center flex-wrap lg:justify-start gap-3 mb-2">
-                        <?php foreach ($cc->overall_colors as $asset): ?>
+                    <div class="flex justify-center lg:justify-start gap-3">
+                        <?php foreach ($cc->assets as $asset): ?>
                             <button
-                                @click="activeImage = '/img/variants/<?= $asset['variant_filename'] ?>'; isLoading: true; activeName = '<?= $asset['color_title'] ?>'"
+                                @click="activeImage = '/img/variants/<?= $asset['variant_filename'] ?>'; isLoading: true;"
                                 style="background-color: <?= $asset['color_hex_value'] ?>;"
                                 class="w-8 h-8 rounded-full border hover:scale-95"></button>
                         <?php endforeach; ?>
                     </div>
-                    <span x-text="activeName" class="text-black mt-2"></span>
                 </div>
 
                 <!-- Vehicle Name -->
@@ -73,7 +76,8 @@
 
                 <!-- CTA -->
                 <div>
-                    <a href="<?= url_title($cc->vehicle_title, '-', true) ?>/#vehicle-contact-form" class="inline-flex items-center gap-2 text-sm font-semibold text-red-600 hover:underline">
+                    <a href="<?= url_title($cc->vehicle_title, '-', true) ?>/#vehicle-contact-form"
+                        class="inline-flex items-center gap-2 text-sm font-semibold text-red-600 hover:underline">
                         Inquire Now
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
@@ -105,10 +109,14 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             <!-- Card -->
             <?php foreach ($variants as $row): ?>
-                <div x-data="{ activeImage: '/img/variants/<?= $row->variant_filename ?>', isLoading: true}" class="space-y-4">
+                <div x-data="{ activeImage: '/img/variants/<?= $row->variant_filename ?>', isLoading: true}"
+                    class="space-y-4">
                     <div class="w-full max-w-4xl aspect-21/9 lg:aspect-video flex justify-center items-center">
-                        <img @load="isLoading = false" x-cloak x-show="!isLoading" :src="activeImage" class="w-full h-full object-contain" alt="" />
-                        <div x-show="isLoading" class="m-auto animate-spin inline-block size-8 border-3 border-current border-t-transparent rounded-[999px] text-primary" role="status" aria-label="loading">
+                        <img @load="isLoading = false" x-cloak x-show="!isLoading" :src="activeImage"
+                            class="w-full h-full object-contain" alt="" />
+                        <div x-show="isLoading"
+                            class="m-auto animate-spin inline-block size-8 border-3 border-current border-t-transparent rounded-[999px] text-primary"
+                            role="status" aria-label="loading">
                             <span class="sr-only">Loading...</span>
                         </div>
                     </div>
@@ -116,8 +124,7 @@
                     <div class="flex justify-center items-center lg:justify-start gap-3">
                         <span class="text-xs text-primary-700">Available in</span>
                         <?php foreach ($row->assets as $asset): ?>
-                            <button
-                                @click="activeImage = '/img/variants/<?= $asset['variant_filename'] ?>'; isLoading = true"
+                            <button @click="activeImage = '/img/variants/<?= $asset['variant_filename'] ?>'; isLoading = true"
                                 style="background-color: <?= $asset['color_hex_value'] ?>;"
                                 class="w-4 h-4 rounded-full border"></button>
                         <?php endforeach; ?>
@@ -139,7 +146,8 @@
                         </p>
                     <?php endforeach; ?>
 
-                    <button type="button" @click='showAccordionModal(<?= json_encode($row->fullSpecifications) ?>)' class="text-sm font-semibold text-red-600 hover:underline">
+                    <button type="button" @click='showAccordionModal(<?= json_encode($row->fullSpecifications) ?>)'
+                        class="text-sm font-semibold text-red-600 hover:underline">
                         Full specs →
                     </button>
                 </div>
@@ -175,7 +183,8 @@
   }' class="relative">
                 <div class="hs-carousel flex flex-col sm:flex-row gap-2">
                     <div class="sm:order-2 relative grow overflow-hidden min-h-[500px] rounded-lg">
-                        <div class="hs-carousel-body absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0">
+                        <div
+                            class="hs-carousel-body absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0">
                             <?php foreach ($gallery as $photo): ?>
                                 <div class="hs-carousel-slide">
                                     <!-- <div class="flex justify-center h-full bg-surface p-6">
@@ -189,18 +198,24 @@
                         </div>
 
                         <!-- Arrows -->
-                        <button type="button" class="hs-carousel-prev hs-carousel-disabled:opacity-50 hs-carousel-disabled:cursor-default absolute top-1/2 start-2 inline-flex justify-center items-center size-10 bg-layer text-layer-foreground rounded-full shadow-2xs hover:bg-layer-hover -translate-y-1/2 focus:outline-hidden">
+                        <button type="button"
+                            class="hs-carousel-prev hs-carousel-disabled:opacity-50 hs-carousel-disabled:cursor-default absolute top-1/2 start-2 inline-flex justify-center items-center size-10 bg-layer text-layer-foreground rounded-full shadow-2xs hover:bg-layer-hover -translate-y-1/2 focus:outline-hidden">
                             <span class="text-2xl" aria-hidden="true">
-                                <svg class="shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <svg class="shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
                                     <path d="m15 18-6-6 6-6" />
                                 </svg>
                             </span>
                             <span class="sr-only">Previous</span>
                         </button>
-                        <button type="button" class="hs-carousel-next hs-carousel-disabled:opacity-50 hs-carousel-disabled:cursor-default absolute top-1/2 end-2 inline-flex justify-center items-center size-10 bg-layer text-layer-foreground rounded-full shadow-2xs hover:bg-layer-hover -translate-y-1/2 focus:outline-hidden">
+                        <button type="button"
+                            class="hs-carousel-next hs-carousel-disabled:opacity-50 hs-carousel-disabled:cursor-default absolute top-1/2 end-2 inline-flex justify-center items-center size-10 bg-layer text-layer-foreground rounded-full shadow-2xs hover:bg-layer-hover -translate-y-1/2 focus:outline-hidden">
                             <span class="sr-only">Next</span>
                             <span class="text-2xl" aria-hidden="true">
-                                <svg class="shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <svg class="shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
                                     <path d="m9 18 6-6-6-6" />
                                 </svg>
                             </span>
@@ -211,9 +226,11 @@
                     <!-- Thumbnails -->
                     <div class="sm:order-1 flex-none">
 
-                        <div class="hs-carousel-pagination max-h-[500px] flex flex-row sm:flex-col gap-2 overflow-x-auto sm:overflow-x-hidden sm:overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-thumb]:rounded-none [&::-webkit-scrollbar-track]:bg-scrollbar-track [&::-webkit-scrollbar-thumb]:bg-scrollbar-thumb">
+                        <div
+                            class="hs-carousel-pagination max-h-[500px] flex flex-row sm:flex-col gap-2 overflow-x-auto sm:overflow-x-hidden sm:overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-thumb]:rounded-none [&::-webkit-scrollbar-track]:bg-scrollbar-track [&::-webkit-scrollbar-thumb]:bg-scrollbar-thumb">
                             <?php foreach ($gallery as $photo): ?>
-                                <div class="hs-carousel-pagination-item shrink-0 border border-line-2 rounded-md overflow-hidden cursor-pointer size-20 sm:size-32 hs-carousel-active:border-primary">
+                                <div
+                                    class="hs-carousel-pagination-item shrink-0 border border-line-2 rounded-md overflow-hidden cursor-pointer size-20 sm:size-32 hs-carousel-active:border-primary">
                                     <div class="flex justify-center items-center text-center size-full bg-surface p-2">
                                         <!-- <span class="text-xs text-foreground transition duration-700">First slide</span> -->
                                         <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 rounded"
@@ -284,55 +301,34 @@
     <!-- SweetAlert2 template: Preline accordion (popup uses customClass for container style) -->
     <template id="swal-vehicles-accordion">
         <swal-html>
-            <div class="hs-accordion-group space-y-2" data-hs-accordion-always-open>
+            <div class="hs-accordion-group">
                 <template x-for="(value, index) in $store.fullSpec">
-                    <div class="hs-accordion active overflow-hidden rounded-xl border border-gray-200 bg-white"
-                        :id="`hs-spec-heading-${index}`">
-
+                    <div class="hs-accordion" :id="`hs-basic-heading-${index}`">
                         <button
-                            class="hs-accordion-toggle w-full flex items-center gap-2.5 px-[18px] py-[14px]
-                       text-left hover:bg-gray-50 focus:outline-none transition-colors duration-150"
-                            aria-expanded="true"
-                            :aria-controls="`hs-spec-collapse-${index}`">
-
-                            <!-- Grid icon -->
-                            <span class="flex-shrink-0 flex items-center justify-center w-[18px] h-[18px]
-                             rounded bg-gray-100 border border-accent-200">
-                                <svg class="w-2.5 h-2.5 text-accent-400" viewBox="0 0 10 10" fill="none"
-                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-                                    <rect x="1" y="1" width="3.5" height="3.5" rx="0.5" />
-                                    <rect x="5.5" y="1" width="3.5" height="3.5" rx="0.5" />
-                                    <rect x="1" y="5.5" width="3.5" height="3.5" rx="0.5" />
-                                    <rect x="5.5" y="5.5" width="3.5" height="3.5" rx="0.5" />
-                                </svg>
-                            </span>
-
-                            <!-- Section label -->
-                            <span x-text="index"
-                                class="uppercase tracking-wide text-[11px] font-medium text-gray-500">
-                            </span>
-
-                            <!-- Chevron -->
-                            <svg class="hs-accordion-active:rotate-180 ml-auto w-3.5 h-3.5 text-gray-400
-                            transition-transform duration-200"
-                                viewBox="0 0 14 14" fill="none" stroke="currentColor"
-                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M3 5l4 4 4-4" />
+                            class="hs-accordion-toggle hs-accordion-active:text-accent-600 px-6 py-3 inline-flex items-center gap-x-3 text-sm w-full font-semibold text-start text-gray-800 hover:text-gray-500 focus:outline-hidden focus:text-gray-500 rounded-lg disabled:opacity-50 disabled:pointer-events-none"
+                            aria-expanded="false" :aria-controls="`hs-basic-collapse-${index}`">
+                            <svg class="hs-accordion-active:hidden hs-accordion-active:text-accent-600 hs-accordion-active:group-hover:text-accent-600 block size-4 text-gray-600 group-hover:text-gray-500"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M5 12h14"></path>
+                                <path d="M12 5v14"></path>
                             </svg>
+                            <svg class="hs-accordion-active:block hs-accordion-active:text-accent-600 hs-accordion-active:group-hover:text-accent-600 hidden size-4 text-gray-600 group-hover:text-gray-500"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M5 12h14"></path>
+                            </svg>
+                            <span x-text="index"></span>
                         </button>
-
-                        <div :id="`hs-spec-collapse-${index}`"
-                            class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 border-t border-gray-100"
-                            role="region"
-                            :aria-labelledby="`hs-spec-heading-${index}`">
-
-                            <template x-for="(row, rowIndex) in value">
-                                <div class="flex items-center justify-between gap-4 px-[18px] py-2.5"
-                                    :class="rowIndex < value.length - 1 ? 'border-b border-gray-100' : ''">
-                                    <p x-text="row.spec_title"
-                                        class="text-[13px] capitalize text-gray-500"></p>
-                                    <p x-text="row.vs_value"
-                                        class="text-[13px] font-medium text-gray-800 text-right max-w-[180px]"></p>
+                        <div :id="`hs-basic-collapse-${index}`"
+                            class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                            role="region" :aria-labelledby="`hs-basic-heading-${index}`">
+                            <template x-for="row in value">
+                                <div class="pb-4 px-6 flex justify-between">
+                                    <p x-text="row.spec_title" class="text-sm capitalize text-gray-600"></p>
+                                    <p x-text="row.vs_value" class="w-44 text-right text-sm text-gray-600"></p>
                                 </div>
                             </template>
                         </div>
@@ -342,7 +338,8 @@
         </swal-html>
         <swal-footer>
             <div class="flex justify-end gap-x-2">
-                <button @click="$store.Swal.close()" type="button" class="py-2 px-4 inline-flex items-center gap-x-1.5 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-700 hover:bg-gray-50 transition-colors duration-150">
+                <button @click="$store.Swal.close()" type="button"
+                    class="py-2 px-4 inline-flex items-center gap-x-1.5 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-700 hover:bg-gray-50 transition-colors duration-150">
                     Close
                 </button>
             </div>

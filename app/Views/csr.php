@@ -2,12 +2,20 @@
 <?= $this->section("mainContent"); ?>
 
 <body class="flex flex-col min-h-screen">
+    <section class="relative bg-black text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+            <h1 class="text-4xl md:text-5xl font-bold mt-4 mb-4">CSR Initiatives</h1>
+        </div>
+    </section>
+
+
+
     <section class="py-16 md:py-24 px-4 md:px-8 bg-slate-50" aria-labelledby="contact-heading">
         <div class="max-w-6xl mx-auto">
-            <header class="text-center mb-12 md:mb-16">
-                <h2 id="contact-heading" class="text-3xl md:text-4xl font-bold text-slate-800 tracking-tight">
+            <header class="text-left mb-12 md:mb-16">
+                <!-- <h2 id="contact-heading" class="text-3xl md:text-4xl font-bold text-slate-800 tracking-tight">
                     CSR Initiatives
-                </h2>
+                </h2> -->
                 <p class="text-slate-600 mt-2 max-w-lg mx-auto">
                     Driving sustainable mobility while creating positive impact for people and the planet.
                 </p>

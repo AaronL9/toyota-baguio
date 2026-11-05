@@ -6,7 +6,7 @@ $vite = new Vite();
 $tags = $vite->tags(
     "main.ts",
 )
-?>
+    ?>
 
 <!DOCTYPE html>
 <html lang="en" data-page="<?= isset($page) ? $page : "" ?>">
@@ -24,12 +24,13 @@ $tags = $vite->tags(
 <body class=" flex flex-col min-h-screen">
     <?= $this->include('data-privacy') ?>
 
-    <header id="header" class="fixed inset-x-0 top-0 z-50 bg-transparent text-white transition-colors duration-300">
+    <header id="header"
+        class="fixed inset-x-0 top-0 z-50 bg-[#969696]/[0.41] backdrop-blur-[18px] backdrop-saturate-[185%] rounded-[0px] border border-white/[0.03] shadow-xl text-white transition-colors duration-300">
         <nav class="mx-auto flex flex-wrap items-center justify-between max-w-7xl px-6 py-4">
 
             <!-- Logo -->
             <a href="/" class="shrink-0" aria-label="Home">
-                <img id="header-logo" class="w-40 h-auto" src="/img/ilocos-sur-white-DHIjoD-c.png" alt="Logo" />
+                <img id="header-logo" class="w-40 h-auto" src="/img/toyota-baguio.png" alt="Logo" />
             </a>
 
             <!-- Mobile toggle and schedule button -->
@@ -55,7 +56,7 @@ $tags = $vite->tags(
                 </button>
 
                 <a href="/schedule"
-                    class="inline-flex h-10 items-center justify-center whitespace-nowrap rounded-md border border-red-600 bg-red-600 px-3 text-sm font-semibold text-white">
+                    class="inline-flex h-10 items-center justify-center whitespace-nowrap rounded-none border border-red-600 bg-red-600 px-3 text-sm font-semibold text-white">
                     Schedule Now
                 </a>
             </div>
@@ -69,7 +70,7 @@ $tags = $vite->tags(
                     $links = [
                         "Home" => "/",
                         "Showroom" => "/showroom",
-                        "About us" => "#team",
+                        "About us" => "/about-us",
                         "Contact us" => "/contact",
                         "CSR" => "/csr"
                     ];
@@ -92,14 +93,16 @@ $tags = $vite->tags(
 
 
     <?= $this->renderSection("mainContent") ?>
+
+
     <!-- FOOTER -->
     <footer class="py-8 bg-black text-white mt-auto">
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid grid-cols-5 md:grid-cols-5 items-start gap-6">
                 <div class="col-span-2">
-                    <img src="toyota-banner.png" class="h-14 bg-center w-auto" />
+                    <img src="/img/toyota-baguio.png" class="h-14 bg-center w-auto" />
                     <p class="text-gray-300 text-sm pt-2">
-                        Langlangca Segundo, Candon City, 2710
+                        Baguio City, 2600
                     </p>
                 </div>
                 <div>
@@ -144,7 +147,7 @@ $tags = $vite->tags(
             </div>
             <hr class="my-6 border-red-600" />
             <div class="flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 gap-2">
-                <p>© 2026 Toyota Ilocos-Sur. All rights reserved.</p>
+                <p>© 2026 Toyota Baguio. All rights reserved.</p>
                 <p>Powered by BStech Solutions</p>
             </div>
         </div>

@@ -5,8 +5,10 @@
 <section id="home" data-hs-carousel='{
     "loadingClasses": "opacity-0",
     "isInfiniteLoop": true
-  }' class="relative">
-    <div class="hs-carousel relative h-screen w-full overflow-hidden bg-gray-900">
+  }' class="relativeS">
+    <div class="hs-carousel relative overflow-hidden w-full h-75 sm:h-100 md:h-125 lg:h-150 shadow-lg">
+
+        <div class="text-red-900"> Test</div>
         <div
             class="hs-carousel-body absolute bottom-0 start-0 top-0 flex flex-nowrap opacity-0 transition-transform duration-700">
 
@@ -14,11 +16,13 @@
             <!-- Slide 1 -->
             <div class="hs-carousel-slide">
                 <div class="relative h-full">
-                    <img src="/img/carousel1.jpg" alt="Mountain landscape" class="h-full w-full object-cover" />
+                    <img src="/img/carousel2-ExbEmYc-.jpg" alt="Mountain landscape"
+                        class="h-full w-full object-cover" />
                     <div class="absolute inset-0 flex items-center justify-center px-16 text-center text-white">
                     </div>
                 </div>
             </div>
+            <div class="absolute inset-0 bg-black/30"></div>
 
             <!-- Slide 2 -->
             <div class="hs-carousel-slide">
@@ -58,82 +62,126 @@
 </section>
 
 <!-- Vehicle Cards Section -->
-<section class="py-16 md:py-24 bg-base-100 bg-gray-200">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-12 gap-4">
-            <div class="text-center md:text-left">
-                <span class="text-red-600 font-semibold text-sm uppercase tracking-wider">Our Collection</span>
-                <h2 class="text-4xl md:text-5xl font-bold mt-4 mb-2">
+<section class="bg-gray-100 py-16 md:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+        <!-- Section Heading -->
+        <div class="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div class="max-w-2xl">
+                <div class="mb-4 flex items-center gap-3">
+                    <!-- <span class="h-0.5 w-10 bg-red-600"></span>
+                    <span class="text-xs font-bold uppercase tracking-[0.2em] text-red-600">
+                        Our Collection
+                    </span> -->
+                </div>
+
+                <h2 class="text-3xl font-bold tracking-tight text-gray-950 sm:text-4xl md:text-5xl">
                     Featured Vehicles
                 </h2>
-                <p class="text-gray-600 text-lg max-w-2xl md:max-w-none">
-                    Discover our premium selection of Toyota vehicles
+
+                <p class="mt-4 text-base leading-relaxed text-gray-600">
+                    Discover our premium selection of Toyota vehicles.
                 </p>
             </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-
-            <!-- Vehicle Cards -->
+        <!-- Vehicle Grid -->
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             <?php foreach ($vehicles as $row): ?>
-                <div class="group flex flex-col overflow-hidden bg-gray-100 shadow-lg">
-                    <div class="relative overflow-hidden bg-gray-100">
-                        <img src="/img/variants/<?= $row->variant_filename ?>" class="w-full h-64 object-contain" />
-                        <div
-                            class="flex flex-col flex-1 p-5 bg-linear-to-br from-gray-900 to-black text-white min-h-[250px]">
-                            <h3 class="text-2xl font-semibold mb-2"><?= $row->vehicle_title ?></h3>
+                <article
+                    class="group flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white transition duration-300 hover:border-gray-300 hover:shadow-xl">
+
+                    <!-- Vehicle Image -->
+                    <div class="relative overflow-hidden bg-gray-50 px-4 pt-8 pb-6">
+                        <!-- Decorative background -->
+                        <div aria-hidden="true"
+                            class="absolute inset-x-8 bottom-8 h-20 rounded-full bg-gray-200 opacity-50 blur-2xl">
+                        </div>
+
+                        <img src="/img/variants/<?= $row->variant_filename ?>"
+                            alt="<?= htmlspecialchars($row->vehicle_title, ENT_QUOTES, 'UTF-8') ?>" loading="lazy"
+                            class="relative h-48 w-full object-contain transition-transform duration-500 motion-safe:group-hover:scale-105" />
+                    </div>
+
+                    <!-- Vehicle Details -->
+                    <div class="flex flex-1 flex-col p-6">
+
+                        <div class="mb-5">
+                            <div aria-hidden="true"
+                                class="mb-4 h-1 w-8 rounded-fultransition-all duration-300 group-hover:w-14">
+                            </div>
+
+                            <h3 class="text-2xl font-bold tracking-tight text-gray-950">
+                                <?= $row->vehicle_title ?>
+                            </h3>
+                        </div>
+
+                        <!-- Pricing / Tagline -->
+                        <div class="mb-6">
                             <?php if ($row->variant_isshowprice): ?>
-                                <div class="space-y-1 mb-4">
-                                    <p class="text-sm text-gray-300">Starting at</p>
-                                    <p class="text-2xl font-bold">
-                                        PHP <?= number_format($row->variant_price, 2) ?><span class="text-sm">*</span>
-                                    </p>
-                                    <p class="text-gray-300">
-                                        PHP <?= number_format($row->variant_price_month, 2) ?><span class="text-sm">*</span> /
-                                        month
-                                    </p>
-                                </div>
+                                <p class="mb-1 text-xs font-medium uppercase tracking-wider text-gray-500">
+                                    Starting at
+                                </p>
+
+                                <p class="text-xl font-bold tracking-tight text-gray-950">
+                                    <span class="text-sm font-medium text-gray-500">PHP</span>
+                                    <?= number_format($row->variant_price, 2) ?><sup class="ml-0.5 text-xs">*</sup>
+                                </p>
+
+                                <p class="mt-2 text-sm leading-relaxed text-gray-500">
+                                    <span class="font-semibold text-gray-700">
+                                        PHP <?= number_format($row->variant_price_month, 2) ?><sup>*</sup>
+                                    </span>
+                                    / month
+                                </p>
                             <?php else: ?>
-                                <p><?= $row->vehicle_tagline ?> </p>
-                            <?php endif ?>
+                                <p class="text-sm leading-relaxed text-gray-600">
+                                    <?= $row->vehicle_tagline ?>
+                                </p>
+                            <?php endif; ?>
+                        </div>
+
+                        <!-- Specs Button -->
+                        <div class="mt-auto border-t border-gray-100 pt-5">
                             <a href="/<?= url_title($row->vehicle_title, '-', true) ?>"
-                                class="mt-auto group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md bg-red-600 px-6 font-medium text-neutral-200">
+                                aria-label="View full specifications for <?= htmlspecialchars($row->vehicle_title, ENT_QUOTES, 'UTF-8') ?>"
+                                class="flex min-h-12 items-center justify-between gap-3 rounded-lg bg-gray-950 px-4 py-3 text-sm font-semibold text-white transition-colors duration-300 hover:bg-red-600 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-600">
+
                                 <span>Full Specs</span>
-                                <div
-                                    class="w-0 translate-x-full pl-0 opacity-0 transition-all duration-200 group-hover:w-5 group-hover:translate-x-0 group-hover:pl-1 group-hover:opacity-100">
-                                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg" class="h-5 w-5">
-                                        <path
-                                            d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
-                                            fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
-                                    </svg>
-                                </div>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6" />
+                                </svg>
                             </a>
                         </div>
                     </div>
-                </div>
+                </article>
             <?php endforeach; ?>
         </div>
-        <div class="flex justify-center md:justify-end mb-8 p-6">
+
+        <!-- Showroom Link -->
+        <div class="mt-10 flex flex-col items-center justify-between gap-5 border-t border-gray-300 pt-8 sm:flex-row">
+            <p class="text-center text-sm text-gray-600 sm:text-left">
+                Your next journey starts with the right vehicle.
+            </p>
+
             <a href="/showroom"
-                class="group relative inline-flex h-14 items-center justify-center rounded-full bg-red-600 py-1 pl-6 pr-14 font-medium text-white">
-                <span class="z-10 pr-2 transition-colors group-hover:text-red-600">View All Vehicles</span>
-                <div
-                    class="absolute right-1 inline-flex h-12 w-12 items-center justify-end rounded-full bg-white transition-[width] group-hover:w-[calc(100%-8px)]">
-                    <div class="mr-3.5 flex items-center justify-center">
-                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"
-                            class="h-5 w-5 text-red-600">
-                            <path
-                                d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
-                                fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
-                        </svg>
-                    </div>
-                </div>
+                class="group inline-flex min-h-12 items-center justify-center gap-4 rounded-none bg-red-600 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-600">
+
+                <span>View All Vehicles</span>
+
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6" />
+                </svg>
             </a>
         </div>
+
     </div>
 </section>
+
 
 <!-- HERO SECTION -->
 <section class="relative lg:grid lg:h-screen lg:place-content-center">
@@ -157,16 +205,85 @@
     </div>
 </section>
 
+<!-- HERO / EDITORIAL SECTION -->
+<section aria-labelledby="hero-title" class="bg-white pt-24 text-zinc-900">
+    <!-- Row 1: Text Left / Image Right -->
+    <div class="grid items-stretch lg:grid-cols-2">
+
+        <!-- Text -->
+        <div class="flex items-center px-6 py-14 sm:px-12 lg:px-16 xl:px-24">
+            <div class="mx-auto w-full max-w-lg">
+                <h1 id="hero-title"
+                    class="text-3xl font-semibold uppercase leading-tight tracking-[0.06em] sm:text-4xl xl:text-5xl">
+                    Driven by
+                    <span class="mt-2 block text-red-600 mb-10">
+                        Innovation.
+                    </span>
+                </h1>
+
+                <p class="text-base leading-8 text-zinc-600 sm:text-lg">
+                    Welcome to Toyota Baguio City
+                </p>
+            </div>
+        </div>
+
+        <!-- Image -->
+        <div class="relative min-h-72 overflow-hidden sm:min-h-96 lg:min-h-[520px]">
+            <img src="/img/banner2-DKS0BEOM.jpg" alt="" fetchpriority="high"
+                class="absolute inset-0 h-full w-full object-cover object-center">
+        </div>
+    </div>
+
+    <!-- Space Between Editorial Rows -->
+    <div aria-hidden="true" class="h-8 sm:h-12 lg:h-20"></div>
+
+    <!-- Row 2: Image Left / Text Right -->
+    <div class="grid items-stretch lg:grid-cols-2">
+
+        <!-- Text: Appears First on Mobile -->
+        <div class="flex items-center px-6 py-14 sm:px-12
+                   lg:col-start-2 lg:row-start-1 lg:px-16 xl:px-24">
+            <div class="mx-auto w-full max-w-lg">
+                <h2 class="text-3xl font-semibold uppercase leading-tight tracking-[0.06em] sm:text-4xl xl:text-5xl">
+                    Powered by
+                    <span class="mt-2 block">
+                        Results.
+                    </span>
+                </h2>
+
+                <div aria-hidden="true" class="my-7 h-px w-12 bg-red-600"></div>
+
+                <p class="text-base leading-8 text-zinc-600 sm:text-lg">
+                    Discover a new perspective on every drive.
+                    Your next chapter begins with Toyota Ilocos-Sur.
+                </p>
+            </div>
+        </div>
+
+        <!-- Image: Replace with a Second Photo if Available -->
+        <div class="relative min-h-72 overflow-hidden sm:min-h-96
+                   lg:col-start-1 lg:row-start-1 lg:min-h-[520px]">
+            <img src="/img/banner2-DKS0BEOM.jpg" alt="" loading="lazy"
+                class="absolute inset-0 h-full w-full object-cover object-right">
+        </div>
+    </div>
+
+    <div aria-hidden="true" class="h-8 sm:h-12 lg:h-20"></div>
+</section>
+
 <!-- SERVICE SECTION -->
 <section id="services" class="py-16 md:py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <!-- Right -->
+            <div class="relative">
+                <div class="rounded-none overflow-hidden shadow-2xl">
+                    <img src="/img/maintenance-GiBGTARx.jpg" alt="Toyota Service Center"
+                        class="w-full h-auto object-cover" />
+                </div>
+            </div>
             <!-- Left -->
             <div>
-                <span class="text-red-600 font-semibold text-sm uppercase tracking-wider">
-                    Expert Care
-                </span>
-
                 <h2 class="text-4xl md:text-5xl font-bold mt-4 mb-6 text-gray-900">
                     Schedule Toyota Service
                 </h2>
@@ -177,7 +294,7 @@
                     experience professional care from certified technicians.
                 </p>
 
-                <ul class="space-y-4 mb-8">
+                <!-- <ul class="space-y-4 mb-8">
                     <li class="flex items-center gap-3">
                         <svg class="w-6 h-6 text-red-600 shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
@@ -204,39 +321,50 @@
                         </svg>
                         <span class="text-gray-700">Quick &amp; Convenient Scheduling</span>
                     </li>
-                </ul>
+                </ul> -->
 
                 <a href="/schedule"
-                    class="group relative inline-flex h-14 items-center justify-center rounded-full bg-red-600 py-1 pl-6 pr-14 font-medium text-white">
-                    <span class="z-10 pr-2 transition-colors group-hover:text-red-600">Schedule Maintenance</span>
-                    <div
-                        class="absolute right-1 inline-flex h-12 w-12 items-center justify-end rounded-full bg-white transition-[width] group-hover:w-[calc(100%-8px)]">
-                        <div class="mr-3.5 flex items-center justify-center">
-                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-600">
-                                <path
-                                    d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
-                                    fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
-                            </svg>
-                        </div>
-                    </div>
+                    class="group inline-flex min-h-12 items-center justify-center gap-4 rounded-none bg-red-600 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-600">
+
+                    <span>Schedule Maintenance</span>
+
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6" />
+                    </svg>
                 </a>
             </div>
 
-            <!-- Right -->
-            <div class="relative">
-                <div class="rounded-2xl overflow-hidden shadow-2xl">
-                    <img src="/img/maintenance-GiBGTARx.jpg" alt="Toyota Service Center"
-                        class="w-full h-auto object-cover" />
-                </div>
-            </div>
+
         </div>
     </div>
 </section>
 
-<!-- Meet our Team -->
-<section id="team" class="bg-zinc-800 text-white py-16 px-6 scroll-p-24 md:px-16 lg:px-24 xl:px-32">
+
+<!-- Team Section -->
+<section id="team" class="bg-white text-black py-16 px-6 scroll-p-24 md:px-16 lg:px-24 xl:px-32">
     <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+        <div class="flex flex-col items-center lg:items-start gap-6">
+            <span class="text-red-600 font-semibold text-sm uppercase tracking-wider">
+                Meet our team
+            </span>
+            <h2 class="text-center lg:text-left text-4xl md:text-5xl/16 max-w-lg leading-tight text-black">
+                The team driving the brand forward.
+            </h2>
+            <p class="text-center lg:text-left text-sm text-black max-w-md">
+                Our marketing specialists, strategists, and storytellers connect
+                drivers with the innovation and reliability of Toyota Motor
+                Corporation through campaigns that inspire trust and loyalty.
+            </p>
+            <a href="/agents"
+                class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md border border-red-600 bg-red-600 px-6 font-medium text-white transition-all duration-100 [box-shadow:5px_5px_rgb(153_27_27)] active:translate-x-0.75 active:translate-y-0.75 active:[box-shadow:0px_0px_rgb(153_27_27)]">
+                See more
+            </a>
+        </div>
+
+
         <!-- Left Content - Image Gallery -->
         <div class="grid grid-cols-2 gap-6 max-w-2xl mx-auto lg:mx-0">
             <?php for ($i = 0; $i < count($agents); $i++): ?>
@@ -341,23 +469,7 @@
         </div>
 
         <!-- Right Content - Text and Button -->
-        <div class="flex flex-col items-center lg:items-start gap-6">
-            <span class="text-red-600 font-semibold text-sm uppercase tracking-wider">
-                Meet our team
-            </span>
-            <h2 class="text-center lg:text-left text-4xl md:text-5xl/16 max-w-lg leading-tight text-white">
-                The team driving the brand forward.
-            </h2>
-            <p class="text-center lg:text-left text-sm text-white max-w-md">
-                Our marketing specialists, strategists, and storytellers connect
-                drivers with the innovation and reliability of Toyota Motor
-                Corporation through campaigns that inspire trust and loyalty.
-            </p>
-            <a href="/agents"
-                class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md border border-red-600 bg-red-600 px-6 font-medium text-white transition-all duration-100 [box-shadow:5px_5px_rgb(153_27_27)] active:translate-x-0.75 active:translate-y-0.75 active:[box-shadow:0px_0px_rgb(153_27_27)]">
-                See more
-            </a>
-        </div>
+
     </div>
 </section>
 

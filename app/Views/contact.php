@@ -3,143 +3,244 @@
 <?= $this->section("mainContent"); ?>
 
 <!-- Contact Us Section -->
-<section class="py-16 md:py-24 px-4 md:px-8 bg-slate-50" aria-labelledby="contact-heading">
-    <div class="max-w-6xl mx-auto">
-        <header class="text-center mb-12 md:mb-16">
-            <h2 id="contact-heading" class="text-3xl md:text-4xl font-bold text-slate-800 tracking-tight">
-                Contact Us
+<section class="relative bg-black text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <h1 class="text-4xl md:text-5xl font-bold mt-4 mb-4">Contact Us</h1>
+    </div>
+</section>
+
+
+<section class="bg-zinc-100 px-4 py-16 sm:px-6 md:py-24 lg:px-8" aria-labelledby="contact-heading">
+    <div class="mx-auto max-w-6xl">
+
+        <!-- Heading -->
+        <header class="mb-10 md:mb-12">
+            <span class="text-xs font-bold uppercase tracking-[0.2em] text-red-600">
+                Contact us
+            </span>
+
+            <h2 id="contact-heading"
+                class="mt-3 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl md:text-5xl">
+                We'd love to hear from you!
             </h2>
-            <p class="text-slate-600 mt-2 max-w-lg mx-auto">
-                Get in touch with our team. We’re here to help with any questions
-                about our vehicles and services.
-            </p>
         </header>
 
-        <div class="grid md:grid-cols-2 gap-10 lg:gap-16">
-            <!-- Contact info -->
-            <div class="space-y-8">
-                <div>
-                    <h3 class="text-slate-800 font-semibold text-sm uppercase tracking-wider mb-4">
+        <div
+            class="grid overflow-hidden rounded-none  border border-zinc-200 bg-white shadow-sm lg:grid-cols-[5fr_6fr]">
+
+            <!-- Contact information -->
+            <aside class="bg-zinc-900 p-6 text-white sm:p-8 lg:p-10" aria-labelledby="contact-info-heading">
+                <div class="mb-8 border-b border-white/15 pb-6">
+                    <h3 id="contact-info-heading" class="text-2xl font-semibold">
                         Visit or call
                     </h3>
-                    <ul class="space-y-4 text-slate-600">
-                        <li class="flex gap-3">
-                            <span
-                                class="shrink-0 w-8 h-8 rounded-lg bg-slate-200 flex items-center justify-center text-slate-600"
-                                aria-hidden="true">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                </svg>
-                            </span>
-                            <div>
-                                <p class="font-medium text-slate-800">Address</p>
-                                <p>
-                                    Langlangca Segundo, Candon City, 2710 Ilocos Sur
-                                    <!-- 123 Automotive Drive, Suite 100<br />City, State 12345 -->
-                                </p>
-                            </div>
-                        </li>
-                        <li class="flex gap-3">
-                            <span
-                                class="shrink-0 w-8 h-8 rounded-lg bg-slate-200 flex items-center justify-center text-slate-600"
-                                aria-hidden="true">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                                </svg>
-                            </span>
-                            <div>
-                                <p class="font-medium text-slate-800">Phone</p>
-                                <p>
-                                    0995-631-0512 / 0920-966-2715 <br />
-                                    077-644-0112 - Vehicle Sales Department <br>
-                                    077-644-0154 - Customer Relations Department <br>
-                                    077-644-0251 - Service Department
-                                </p>
-                            </div>
-                        </li>
-                        <li class="flex gap-3">
-                            <span
-                                class="shrink-0 w-8 h-8 rounded-lg bg-slate-200 flex items-center justify-center text-slate-600"
-                                aria-hidden="true">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
-                            </span>
-                            <div>
-                                <p class="font-medium text-slate-800">Email</p>
-                                <p>
-                                    <a href="mailto:customercare@toyotailocossur.com"
-                                        class="hover:text-red-600 transition-colors">customercare@toyotailocossur.com</a>
-                                </p>
-                            </div>
-                        </li>
-                        <li class="flex gap-3">
-                            <span
-                                class="shrink-0 w-8 h-8 rounded-lg bg-slate-200 flex items-center justify-center text-slate-600"
-                                aria-hidden="true">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </span>
-                            <div>
-                                <p class="font-medium text-slate-800">Office Hours</p>
-                                <p>
-                                    Monday - Saturday |
-                                    8:00 AM - 5:00 PM
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
                 </div>
-            </div>
+
+                <address class="space-y-8 not-italic">
+
+                    <!-- Address -->
+                    <div class="flex gap-4">
+                        <span
+                            class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 text-red-400"
+                            aria-hidden="true">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <circle cx="12" cy="11" r="3" />
+                            </svg>
+                        </span>
+
+                        <div class="min-w-0">
+                            <h4 class="text-sm font-semibold text-white">
+                                Our location
+                            </h4>
+
+                            <p class="mt-2 text-sm leading-7 text-zinc-300">
+                                Baguio City
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="flex gap-4">
+                        <span
+                            class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 text-red-400"
+                            aria-hidden="true">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                        </span>
+
+                        <div class="min-w-0 flex-1">
+                            <h4 class="text-sm font-semibold text-white">
+                                Call our team
+                            </h4>
+
+                            <div class="mt-3 flex flex-wrap gap-x-3 gap-y-2 text-sm text-zinc-300">
+                                <a href="tel:09956310512"
+                                    class="rounded-sm underline-offset-4 hover:text-white hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-400">
+                                    0995-631-0512
+                                </a>
+
+                                <span class="text-zinc-500" aria-hidden="true">/</span>
+
+                                <a href="tel:09209662715"
+                                    class="rounded-sm underline-offset-4 hover:text-white hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-400">
+                                    0920-966-2715
+                                </a>
+                            </div>
+
+                            <dl class="mt-5 space-y-4 border-t border-white/10 pt-5">
+                                <div>
+                                    <dt class="text-xs text-zinc-400">
+                                        Vehicle Sales Department
+                                    </dt>
+                                    <dd class="mt-1">
+                                        <a href="tel:0776440112"
+                                            class="text-sm text-zinc-200 underline-offset-4 hover:text-white hover:underline">
+                                            077-644-0112
+                                        </a>
+                                    </dd>
+                                </div>
+
+                                <div>
+                                    <dt class="text-xs text-zinc-400">
+                                        Customer Relations Department
+                                    </dt>
+                                    <dd class="mt-1">
+                                        <a href="tel:0776440154"
+                                            class="text-sm text-zinc-200 underline-offset-4 hover:text-white hover:underline">
+                                            077-644-0154
+                                        </a>
+                                    </dd>
+                                </div>
+
+                                <div>
+                                    <dt class="text-xs text-zinc-400">
+                                        Service Department
+                                    </dt>
+                                    <dd class="mt-1">
+                                        <a href="tel:0776440251"
+                                            class="text-sm text-zinc-200 underline-offset-4 hover:text-white hover:underline">
+                                            077-644-0251
+                                        </a>
+                                    </dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="flex gap-4">
+                        <span
+                            class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 text-red-400"
+                            aria-hidden="true">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8"
+                                viewBox="0 0 24 24">
+                                <rect x="3" y="5" width="18" height="14" rx="2" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m3 7 9 6 9-6" />
+                            </svg>
+                        </span>
+
+                        <div class="min-w-0">
+                            <h4 class="text-sm font-semibold text-white">
+                                Email us
+                            </h4>
+
+                            <a href="mailto:customercare@toyotailocossur.com"
+                                class="mt-2 block break-words text-sm leading-6 text-zinc-300 underline-offset-4 hover:text-white hover:underline">
+                                customercare@toyotailocossur.com
+                            </a>
+                        </div>
+                    </div>
+                </address>
+
+                <!-- Office hours -->
+                <div class="mt-8 flex items-start gap-4 rounded-xl border border-white/10 bg-white/5 p-4">
+                    <svg class="mt-0.5 h-5 w-5 shrink-0 text-red-400" fill="none" stroke="currentColor"
+                        stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="9" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 7v5l3 2" />
+                    </svg>
+
+                    <div>
+                        <h4 class="text-sm font-semibold">Office hours</h4>
+                        <p class="mt-2 text-sm leading-6 text-zinc-300">
+                            Monday – Saturday<br />
+                            8:00 AM – 5:00 PM
+                        </p>
+                    </div>
+                </div>
+            </aside>
 
             <!-- Contact form -->
-            <div x-data="contact" class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
-                <h3 class="text-slate-800 font-semibold text-sm text-center uppercase tracking-wider mb-6">
-                    Send a message
-                </h3>
-                <form @submit.prevent="onSubmitContact($event)" class="space-y-5" action="#" method="post">
+            <div x-data="contact" class="min-w-0 p-6 sm:p-8 lg:p-10">
+                <div class="mb-8">
+                    <h3 class="text-2xl font-bold tracking-tight text-zinc-900">
+                        Send a message
+                    </h3>
+
+                    <p class="mt-2 text-sm leading-6 text-zinc-500">
+                        Fields marked <span class="text-red-600">*</span> are required.
+                    </p>
+                </div>
+
+                <form @submit.prevent="onSubmitContact($event)" action="#" method="post" class="space-y-6">
                     <?= csrf_field('csrf_field') ?>
-                    <div class="grid sm:grid-cols-2 gap-5">
-                        <div>
-                            <label for="contact-name"
-                                class="block text-sm font-medium text-slate-700 mb-1.5">Name</label>
-                            <input type="text" id="contact-name" name="name" required
-                                class="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-slate-800 placeholder-slate-400 focus:border-red-600 focus:ring-2 focus:ring-red-600 outline-none transition"
-                                placeholder="Your name" />
-                        </div>
-                        <div>
-                            <label for="contact-email"
-                                class="block text-sm font-medium text-slate-700 mb-1.5">Email</label>
-                            <input type="email" id="contact-email" name="email" required
-                                class="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-slate-800 placeholder-slate-400 focus:border-red-600 focus:ring-2 focus:ring-red-600 outline-none transition"
-                                placeholder="you@example.com" />
-                        </div>
+
+                    <div>
+                        <label for="contact-name" class="mb-2 block text-sm font-medium text-zinc-700">
+                            Name <span class="text-red-600">*</span>
+                        </label>
+
+                        <input type="text" id="contact-name" name="name" autocomplete="name" required
+                            placeholder="Your name"
+                            class="block w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 transition focus:border-red-600 focus:outline-none focus:ring-2 focus:ring-red-600/15" />
                     </div>
+
+                    <div>
+                        <label for="contact-email" class="mb-2 block text-sm font-medium text-zinc-700">
+                            Email <span class="text-red-600">*</span>
+                        </label>
+
+                        <input type="email" id="contact-email" name="email" autocomplete="email" required
+                            placeholder="you@example.com"
+                            class="block w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 transition focus:border-red-600 focus:outline-none focus:ring-2 focus:ring-red-600/15" />
+                    </div>
+
                     <div>
                         <label for="contact-phone"
-                            class="block text-sm font-medium text-slate-700 mb-1.5">Phone</label>
-                        <input type="tel" id="contact-phone" name="phone"
-                            class="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-slate-800 placeholder-slate-400 focus:border-red-600 focus:ring-2 focus:ring-red-600 outline-none transition"
-                            placeholder="+63 123 456 7890" />
+                            class="mb-2 flex items-center justify-between gap-3 text-sm font-medium text-zinc-700">
+                            Phone
+                        </label>
+
+                        <input type="tel" id="contact-phone" name="phone" autocomplete="tel"
+                            placeholder="+63 123 456 7890"
+                            class="block w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 transition focus:border-red-600 focus:outline-none focus:ring-2 focus:ring-red-600/15" />
                     </div>
+
                     <div>
-                        <label for="contact-message"
-                            class="block text-sm font-medium text-slate-700 mb-1.5">Message</label>
-                        <textarea id="contact-message" name="message" rows="4" required
-                            class="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-slate-800 placeholder-slate-400 focus:border-red-500 focus:ring-2 focus:ring-red-500 outline-none transition resize-y"
-                            placeholder="How can we help?"></textarea>
+                        <label for="contact-message" class="mb-2 block text-sm font-medium text-zinc-700">
+                            Message <span class="text-red-600">*</span>
+                        </label>
+
+                        <textarea id="contact-message" name="message" rows="6" required placeholder="How can we help?"
+                            class="block w-full resize-y rounded-lg border border-zinc-300 bg-white px-4 py-3 text-sm leading-6 text-zinc-900 placeholder:text-zinc-400 transition focus:border-red-600 focus:outline-none focus:ring-2 focus:ring-red-600/15"></textarea>
                     </div>
-                    <div class="lg:flex lg:justify-center">
+
+                    <div class="border-t border-zinc-100 pt-6">
                         <button type="submit"
-                            class="items-center w-full sm:w-auto px-8 py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition-colors">
+                            class="group inline-flex w-full items-center justify-center gap-3 rounded-none bg-red-600 px-6 py-4 text-sm font-semibold text-white transition-colors hover:bg-red-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-600">
                             Send message
+
+                            <svg class="h-5 w-5 motion-safe:transition-transform motion-safe:group-hover:translate-x-1"
+                                fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"
+                                aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6" />
+                            </svg>
                         </button>
                     </div>
                 </form>

@@ -1,7 +1,7 @@
 import { defineConfig, loadEnv } from "vite";
 import tailwindcss from "@tailwindcss/vite";
 
-const env = loadEnv('development', process.cwd(), 'VITE_')
+const env = loadEnv("development", process.cwd(), "VITE_");
 
 export default defineConfig({
   plugins: [tailwindcss()],
@@ -10,11 +10,11 @@ export default defineConfig({
 
   server: {
     cors: {
-      origin: env.VITE_PHP_SERVER_ORIGIN ?? 'http://localhost:8080',
+      origin: env.VITE_PHP_SERVER_ORIGIN ?? "http://localhost:8080",
     },
 
     port: env.VITE_NODE_SERVER_PORT ?? 5173,
-    origin: env.VITE_NODE_SERVER_ORIGIN ?? 'http://localhost:5173',
+    origin: env.VITE_NODE_SERVER_ORIGIN ?? "http://localhost:5173",
   },
 
   build: {
