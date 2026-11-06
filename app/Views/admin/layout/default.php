@@ -1,3 +1,13 @@
+<?php
+
+use App\Libraries\Vite;
+
+$vite = new Vite();
+$tags = $vite->tags(
+  "admin.ts",
+)
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,11 +19,7 @@
   <link rel="shortcut icon" type="image/png" href="/favicon.ico">
   <base href="<?= base_url() ?>">
 
-  <?= csrf_meta("csrf-token"); ?>
-  <?php if (getenv("CI_ENVIRONMENT") !== 'development'): ?>
-    <?= vite_css("admin.ts") ?>
-    <!-- Vite HMR + JS -->
-  <?php endif; ?>
+  <?= $tags->css ?>
 </head>
 
 <body class="flex flex-col min-h-screen" data-page="<?= $page ?? "" ?>">
@@ -22,14 +28,7 @@
   <?= $this->renderSection("sidebar") ?>
   <?= $this->renderSection("adminContent") ?>
 
-  <?php if (getenv("CI_ENVIRONMENT") === 'development'): ?>
-    <script type="module" src="http://localhost:5173/dist/@vite/client"></script>
-    <script type="module" src="http://localhost:5173/dist/admin.ts"></script>
-
-    <!-- Vite HMR + JS -->
-  <?php else: ?>
-    <script type="module" src="/dist/<?= vite_asset('admin.ts'); ?>"></script>
-  <?php endif; ?>
+  <?= $tags->js ?>
 </body>
 
 </html>

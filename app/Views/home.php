@@ -12,7 +12,6 @@
         <div
             class="hs-carousel-body absolute bottom-0 start-0 top-0 flex flex-nowrap opacity-0 transition-transform duration-700">
 
-
             <!-- Slide 1 -->
             <div class="hs-carousel-slide">
                 <div class="relative h-full">

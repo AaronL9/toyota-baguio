@@ -6,7 +6,6 @@ const env = loadEnv("development", process.cwd(), "VITE_");
 export default defineConfig({
   plugins: [tailwindcss()],
   root: "resources",
-  base: "/",
 
   server: {
     cors: {
@@ -21,12 +20,14 @@ export default defineConfig({
     outDir: "../public/dist",
     emptyOutDir: true,
 
-    // generate assets/manifest.json in outDir
-    manifest: "manifest.json",
+    // generate .vite/manifest.json in outDir
+    manifest: true,
 
     rollupOptions: {
       // overwrite default .html entry
       input: {
+        admin_global: '/js/admin/global.js',
+        vehicles: '/js/admin/vehicles.js',
         admin: "/admin.ts",
         main: "/main.ts",
       },

@@ -7,6 +7,9 @@ use App\Models\CategoryModel;
 use App\Models\VariantsModel;
 use App\Models\VehiclesCategoryModel;
 use App\Models\VehiclesModel;
+use CodeIgniter\HTTP\RequestInterface;
+use CodeIgniter\HTTP\ResponseInterface;
+use Psr\Log\LoggerInterface;
 
 class Vehicles extends AdminBaseController
 {
@@ -15,8 +18,14 @@ class Vehicles extends AdminBaseController
     protected $categoryModel;
     protected $variantsModel;
 
-    public function __construct()
-    {
+    public function initController(
+        RequestInterface $request,
+        ResponseInterface $response,
+        LoggerInterface $logger,
+    ) {
+        parent::initController($request, $response, $logger);
+
+        // Add your code here.
         $this->vehiclesCategoryModel = model(VehiclesCategoryModel::class);
         $this->vehiclesModel = model(VehiclesModel::class);
         $this->categoryModel = model(CategoryModel::class);

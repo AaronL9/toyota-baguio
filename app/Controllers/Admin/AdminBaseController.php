@@ -23,6 +23,13 @@ class AdminBaseController extends Controller
     protected $session;
 
     /**
+     * JS Entries
+     * 
+     * @var array
+     */
+    protected $js = ['js/admin/global.js'];
+
+    /**
      * @return void
      */
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
@@ -47,9 +54,19 @@ class AdminBaseController extends Controller
             service('renderer')->setData([
                 'modules' => $sidebar,
                 'access' => $admin['modules'],
+                'js' => $this->js
             ]);
         }
 
         // cache()->delete('modules');
+    }
+
+    protected function addJsEntries(string $path)
+    {
+        $this->js[] = $path;
+
+        service('renderer')->setData([
+            'js' => $this->js,
+        ]);
     }
 }

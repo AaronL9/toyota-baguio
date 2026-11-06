@@ -133,7 +133,7 @@ class VehicleApi extends ResourceController
      */
     public function create()
     {
-        $json = json_decode($this->request->getBody(), true);
+        $json = $this->request->getPost();
 
         // return $this->respond(["data from server" => $json]);
 

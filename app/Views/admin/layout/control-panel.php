@@ -1,4 +1,4 @@
-<?= $this->extend("admin/layout/default"); ?>
+<?= $this->extend("admin/layout/default") ?>
 
 <?php $admin = session()->get("admin") ?>
 

@@ -13,9 +13,9 @@ services:
       - ./composer.json:/var/www/html/composer.json
       - ./composer.lock:/var/www/html/composer.lock
     ports:
-      - 8080:8080 # Map host port 8080 to container port 8080
+      - "${DOCKER_APP_PORT}:${DOCKER_APP_CONTAINER_PORT}"
     command:
-      ["php", "spark", "serve", "--host", "0.0.0.0", "--port", "8080"]
+      ["php", "spark", "serve", "--host", "0.0.0.0", "--port", "${DOCKER_APP_CONTAINER_PORT}"]
   # db:
   #   platform: linux/x86_64 # Ensure architecture compatibility on MacBook Pro
   #   image: mysql:8.0.16 # Use MySQL 8.0.16 official image
