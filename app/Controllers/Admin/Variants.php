@@ -292,7 +292,7 @@ class Variants extends AdminBaseController
         if (!$img->hasMoved()) {
             $filetype = $img->getMimeType();
             $filename = "{$id}-{$img->getFilename()}.{$img->getExtension()}";
-            $destDir = FCPATH . 'img/variants';
+            $destDir = FCPATH . 'uploads/img/variants';
             $img->move($destDir, $filename, true);
 
             $fullPath = $destDir . DIRECTORY_SEPARATOR . $filename;
@@ -315,7 +315,7 @@ class Variants extends AdminBaseController
                     'color_no' => $colorNo,
                     'variant_filename' => $filename,
                     'variant_filenameRaw' => $filename,
-                    'variant_path' => 'img/variants',
+                    'variant_path' => 'uploads/img/variants',
                     'variant_fullPath' => $fullPath,
                     'variant_size' => $img->getSize(),
                     'variant_type' => $filetype,

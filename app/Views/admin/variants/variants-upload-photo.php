@@ -279,7 +279,7 @@
             <!-- Image -->
             <div class="w-full h-32 overflow-hidden">
               <img
-                src="<?= site_url('img/variants/' . esc($photo->variant_filename)) ?>"
+                src="<?= site_url(esc($photo->variant_path) . '/' . esc($photo->variant_filename)) ?>"
                 alt="<?= esc($photo->color_title ?? 'Variant photo') ?>"
                 class="w-full h-full object-cover object-top transition-transform duration-200 group-hover:scale-105" />
             </div>

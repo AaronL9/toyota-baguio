@@ -156,4 +156,6 @@ dist-ssr
 *.sln
 *.sw?
 public/img
+public/uploads
+public/upload
 backup

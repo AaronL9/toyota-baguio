@@ -42,5 +42,3 @@ COPY . .
 FROM backend-dev AS backend-build
 WORKDIR /var/www/html
 RUN composer install --no-dev --no-interaction
- 
-# CMD ["php", "spark", "serve", "--host", "0.0.0.0", "--port", "8081"]

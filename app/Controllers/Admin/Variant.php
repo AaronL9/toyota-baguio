@@ -135,4 +135,107 @@ class Variant extends AdminBaseController
             "errors" => null,
         ]);
     }
+
+    /**
+     * Return the editable properties of a resource object.
+     *
+     * @param int|string|null $id
+     *
+     * @return ResponseInterface
+     */
+    public function edit($id = null, $vehicle_no = null)
+    {
+        $this->addJsEntries('js/admin/variants_edit.js');
+
+        $data['cc'] = $this->vehicleModel->find($vehicle_no);
+
+        $data['variant'] = $this->variantModel
+            ->join('vehicles', 'variants.vehicle_no = vehicles.vehicle_no', 'left')
+            ->find($id);
+
+        $data["categories"] = $this->categoryModel
+            ->select("cat_no, cat_title",)
+            ->where("cat_delete", 0)
+            ->findAll();
+
+        return view('admin/variants/variants_edit', $data);
+    }
+
+    /**
+     * Add or update a model resource, from "posted" properties.
+     *
+     * @param int|string|null $id
+     *
+     * @return ResponseInterface
+     */
+    public function update($id = null)
+    {
+        if (!$id) {
+            return $this->respond([
+                "csrf_token" => csrf_hash(),
+                "message" => "No resources found",
+                "errors" => $this->validator->getErrors()
+            ], 400);
+        }
+
+        $json = $this->request->getPost();
+
+        if (isset($json['inactive'])) {
+            $this->variantModel->update($id, ['variant_inactive' => $json['inactive']]);
+
+            return $this->respond([
+                "csrf_token" => csrf_hash(),
+                "message" => "Variant status change",
+                "errors" => null,
+            ]);
+        }
+
+        $rules = [
+            'vehicle' => 'required',
+            'model' => 'required',
+        ];
+
+        if (!$this->validate($rules)) {
+            return $this->respond([
+                "csrf_token" => csrf_hash(),
+                "message" => "Validation Error",
+                "errors" => $this->validator->getErrors()
+            ], 422);
+        }
+
+        $data['vehicle_no'] = $json['vehicle'];
+        $data['variant_model'] = $json['model'];
+        $data['variant_price'] = $json['price'];
+        $data['variant_price_month'] = $json['price_month'];
+        $data['variant_isdefault'] = $json['isdefault'] ?? 0;
+        $data['variant_isshowprice'] = $json['isshowprice'] ?? 0;
+        $data['variant_encode'] = session()->get('admin')['user_no'] ?? null;
+
+        if ($data['variant_isdefault'] == 1) {
+            $variant = $this->variantModel
+                ->where('vehicle_no', $data['vehicle_no'])
+                ->where('variant_isdefault', 1)
+                ->first();
+
+            if ($variant) {
+                $this->variantModel->update($variant->variant_no, ['variant_isdefault' => 0]);
+            }
+        }
+
+        $isInserted = $this->variantModel->update($id, $data);
+
+        if (!$isInserted) {
+            return $this->respond([
+                "csrf_token" => csrf_hash(),
+                "message" => "Something went wrong",
+                "errors" => $this->variantModel->errors(),
+            ]);
+        }
+
+        return $this->respond([
+            "csrf_token" => csrf_hash(),
+            "message" => "You have successfully updated variant",
+            "errors" => null,
+        ]);
+    }
 }

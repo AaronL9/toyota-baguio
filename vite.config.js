@@ -5,9 +5,10 @@ import tailwindcss from "@tailwindcss/vite";
 
 const env = loadEnv("development", process.cwd(), "VITE_");
 
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   plugins: [tailwindcss()],
   root: "resources",
+  base: command === 'build' ? '/dist/' : '/',
 
   server: {
     cors: {
@@ -46,4 +47,4 @@ export default defineConfig({
 
     },
   },
-});
+}));

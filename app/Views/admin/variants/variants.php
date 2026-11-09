@@ -154,7 +154,7 @@
                         </div>
 
                         <div class="inline-flex items-center gap-x-1">
-                            <a x-bind:href="`/admin/vehicles/<?= url_title($cc->vehicle_title, '-', true) ?>/variant-edit/${variant.id}`"
+                            <a x-bind:href="`/admin/vehicles/<?= url_title($cc->vehicle_title, '-', true) ?>/${variant.id}`"
                                 class="size-8 inline-flex items-center justify-center rounded-lg border border-transparent text-gray-400 hover:bg-orange-50 hover:text-orange-500 focus:outline-hidden transition-colors"
                                 title="Edit">
                                 <i class="fa-solid fa-pen-to-square text-sm"></i>

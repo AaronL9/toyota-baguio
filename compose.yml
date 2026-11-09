@@ -1,6 +1,7 @@
 services:
   server:
     container_name: toyotadagupan
+    userns_mode: "host"
     build:
       context: ./ # The directory to use as build context (current folder)
       target: backend-dev # Dockerfile build stage to target (multi-stage build)
