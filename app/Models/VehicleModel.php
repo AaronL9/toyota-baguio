@@ -9,7 +9,7 @@ class VehicleModel extends Model
     protected $table            = 'vehicles';
     protected $primaryKey       = 'vehicle_no';
     protected $useAutoIncrement = true;
-    protected $returnType       = 'array';
+    protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [

@@ -15,5 +15,8 @@ $routes->group('admin', ['filter' => 'admin'], function ($routes) {
 
 $routes->group('admin', ['filter' => 'adminlogin'], function ($routes) {
     $routes->get('vehicles', "Admin\Vehicle::index");
+    $routes->put('vehicles/(:segment)', 'Admin\Vehicle::update/$1');
+
     $routes->get('vehicles/new', "Admin\Vehicle::new");
+    $routes->get('vehicles/edit/(:segment)', "Admin\Vehicle::edit/$1");
 });

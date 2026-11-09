@@ -18,6 +18,8 @@ $tags = $vite->tags(...$js)
     <title>Toyota Ilocos Sur</title>
     <meta name="description" content="The small framework with powerful features">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?= csrf_meta() ?>
+
     <link rel="shortcut icon" type="image/png" href="/favicon.ico">
     <base href="<?= base_url() ?>">
 

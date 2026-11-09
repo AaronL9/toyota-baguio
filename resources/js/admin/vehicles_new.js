@@ -1,7 +1,5 @@
 import Swal from "sweetalert2";
 import Alpine from "../shared/alpine";
-// import { HSSelect } from "preline";
-// import HSSelect from "@preline/select";
 import HSSelect from "@preline/select/non-auto";
 
 Alpine.data('vehicles_new', (csrf_token) => ({
