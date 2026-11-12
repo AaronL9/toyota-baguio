@@ -198,7 +198,7 @@
             </h1>
 
             <p class="mt-4 text-base sm:text-lg/relaxed text-white/90">
-                Welcome to Toyota Ilocos-Sur
+                Welcome to Toyota Baguio
             </p>
         </div>
     </div>
@@ -254,7 +254,7 @@
 
                 <p class="text-base leading-8 text-zinc-600 sm:text-lg">
                     Discover a new perspective on every drive.
-                    Your next chapter begins with Toyota Ilocos-Sur.
+                    Your next chapter begins with Toyota Baguio.
                 </p>
             </div>
         </div>
