@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\ConfigModel;
 use App\Models\ModulesModel;
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\RequestInterface;
@@ -48,8 +49,11 @@ abstract class BaseController extends Controller
             return (new ModulesModel())->orderBy('mod_order')->findAll();
         });
 
+        $config = new ConfigModel();
+
         service('renderer')->setData([
-            'modules' => $sidebar
+            'modules' => $sidebar,
+            'config' => $config->where('config_code', 'title')->first()
         ]);
     }
 }
