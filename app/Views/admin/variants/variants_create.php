@@ -43,7 +43,7 @@
     </template>
 
     <!-- Form -->
-    <form @submit.prevent="add($event)" id="vehicle-variant-add-form" method="post" action="/admin/vehicles/<?= strtolower(esc($cc->vehicle_title)) ?>" class="w-full max-w-3xl">
+    <form @submit.prevent="add($event)" id="vehicle-variant-add-form" method="post" action="/admin/vehicles/<?= url_title(esc($cc->vehicle_title), '-', true) ?>" class="w-full max-w-3xl">
         <?= csrf_field() ?>
         <input type="hidden" name="vehicle" value="<?= esc($cc->vehicle_no) ?>">
 
