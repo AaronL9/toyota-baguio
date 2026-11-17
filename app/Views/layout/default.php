@@ -100,7 +100,7 @@ $tags = $vite->tags(
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid grid-cols-5 md:grid-cols-5 items-start gap-6">
                 <div class="col-span-2">
-                    <img src="/img/toyota-baguio.png" class="h-14 bg-center w-auto" />
+                    <img src="/static/toyota-baguio.png" class="h-14 bg-center w-auto" />
                     <p class="text-gray-300 text-sm pt-2">
                         Baguio City, 2600
                     </p>
@@ -141,7 +141,7 @@ $tags = $vite->tags(
 
                 <div style="width: fit-content"
                     class="w-25 text-gray-300 mt-5 flex flex-col justify-self-end items-end">
-                    <img class="h-30 m-auto" src="dop-2.png">
+                    <img class="h-30 m-auto" src="static/dop-2.png">
                     <a class="text-center w-full text-[10px]" href="privacy-policy">Privacy Policy</a>
                 </div>
             </div>
