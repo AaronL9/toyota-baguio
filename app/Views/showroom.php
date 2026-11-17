@@ -100,7 +100,7 @@
                                                        focus-visible:outline-offset-4 focus-visible:outline-red-600">
                                                     <!-- Vehicle image -->
                                                     <div class="aspect-[4/3] overflow-hidden bg-zinc-50 p-4">
-                                                        <img src="/img/variants/<?= $escape($vehicle->variant_filename) ?>"
+                                                        <img src="uploads/img/variants/<?= $escape($vehicle->variant_filename) ?>"
                                                             alt="<?= $escape($vehicle->vehicle_title) ?>" loading="lazy" class="h-full w-full object-contain object-center
                                                                motion-safe:transition-transform
                                                                motion-safe:duration-500
