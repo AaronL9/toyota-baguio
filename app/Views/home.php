@@ -26,7 +26,8 @@
             <!-- Slide 2 -->
             <div class="hs-carousel-slide">
                 <div class="relative h-full">
-                    <img src="/static/banners/carousel-2.jpg" alt="Beach at sunset" class="h-full w-full object-cover" />
+                    <img src="/static/banners/carousel-2.jpg" alt="Beach at sunset"
+                        class="h-full w-full object-cover" />
 
                     <div class="absolute inset-0 bg-black/40"></div>
 
@@ -249,8 +250,6 @@
                         Results.
                     </span>
                 </h2>
-
-                <div aria-hidden="true" class="my-7 h-px w-12 bg-red-600"></div>
 
                 <p class="text-base leading-8 text-zinc-600 sm:text-lg">
                     Discover a new perspective on every drive.

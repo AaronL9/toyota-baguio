@@ -6,7 +6,7 @@ $vite = new Vite();
 $tags = $vite->tags(
     "main.ts",
 )
-?>
+    ?>
 
 <!DOCTYPE html>
 <html lang="en" data-page="<?= isset($page) ? $page : "" ?>">
@@ -79,8 +79,16 @@ $tags = $vite->tags(
                     <?php foreach ($links as $key => $value): ?>
                         <?php $isActive = url_is($value); ?>
 
-                        <a class="<?= $isActive ? 'underline decoration-red-600 ' : '' ?>text-current font-medium whitespace-nowrap hover:underline hover:decoration-red-600 underline-offset-2"
-                            href="<?= $value ?>">
+                        <a href="<?= $value ?>" <?= $isActive ? 'aria-current="page"' : '' ?> class="group relative isolate inline-flex overflow-hidden rounded-none
+           px-4 py-2 font-medium whitespace-nowrap
+           transition-colors duration-300 hover:text-white
+           focus-visible:outline focus-visible:outline-2
+           focus-visible:outline-offset-4 focus-visible:outline-red-600
+           <?= $isActive ? 'text-white' : 'text-current' ?>">
+                            <span aria-hidden="true" class="absolute inset-0 -z-10 origin-bottom bg-red-600
+               motion-safe:transition-transform motion-safe:duration-200s
+               <?= $isActive ? 'scale-y-100' : 'scale-y-0 group-hover:scale-y-100' ?>"></span>
+
                             <?= $key ?>
                         </a>
                     <?php endforeach; ?>
