@@ -15,7 +15,7 @@
             <!-- Slide 1 -->
             <div class="hs-carousel-slide">
                 <div class="relative h-full">
-                    <img src="/img/carousel2-ExbEmYc-.jpg" alt="Mountain landscape"
+                    <img src="/static/banners/carousel-1.jpg" alt="Mountain landscape"
                         class="h-full w-full object-cover" />
                     <div class="absolute inset-0 flex items-center justify-center px-16 text-center text-white">
                     </div>
@@ -26,7 +26,7 @@
             <!-- Slide 2 -->
             <div class="hs-carousel-slide">
                 <div class="relative h-full">
-                    <img src="/images/slide-2.jpg" alt="Beach at sunset" class="h-full w-full object-cover" />
+                    <img src="/static/banners/carousel-2.jpg" alt="Beach at sunset" class="h-full w-full object-cover" />
 
                     <div class="absolute inset-0 bg-black/40"></div>
 
@@ -185,7 +185,7 @@
 <!-- HERO SECTION -->
 <section class="relative lg:grid lg:h-screen lg:place-content-center">
     <div class="absolute inset-0 -z-10">
-        <img src="/img/banner2-DKS0BEOM.jpg" class="h-full w-full object-cover" alt="" />
+        <img src="/static/toyota-bg.jpg" class="h-full w-full object-cover" alt="" />
         <div class="absolute inset-0 bg-black/60"></div>
     </div>
     <div
@@ -228,7 +228,7 @@
 
         <!-- Image -->
         <div class="relative min-h-72 overflow-hidden sm:min-h-96 lg:min-h-[520px]">
-            <img src="/img/banner2-DKS0BEOM.jpg" alt="" fetchpriority="high"
+            <img src="/static/toyota-bg.jpg" alt="" fetchpriority="high"
                 class="absolute inset-0 h-full w-full object-cover object-center">
         </div>
     </div>
@@ -262,7 +262,7 @@
         <!-- Image: Replace with a Second Photo if Available -->
         <div class="relative min-h-72 overflow-hidden sm:min-h-96
                    lg:col-start-1 lg:row-start-1 lg:min-h-[520px]">
-            <img src="/img/banner2-DKS0BEOM.jpg" alt="" loading="lazy"
+            <img src="/static/toyota-bg.jpg" alt="" loading="lazy"
                 class="absolute inset-0 h-full w-full object-cover object-right">
         </div>
     </div>
