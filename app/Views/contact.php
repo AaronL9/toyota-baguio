@@ -80,20 +80,13 @@
                             </h4>
 
                             <div class="mt-3 flex flex-wrap gap-x-3 gap-y-2 text-sm text-zinc-300">
-                                <a href="tel:09956310512"
+                                <a href="tel:0743003273"
                                     class="rounded-sm underline-offset-4 hover:text-white hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-400">
-                                    0995-631-0512
-                                </a>
-
-                                <span class="text-zinc-500" aria-hidden="true">/</span>
-
-                                <a href="tel:09209662715"
-                                    class="rounded-sm underline-offset-4 hover:text-white hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-400">
-                                    0920-966-2715
+                                    (074) 300 3273
                                 </a>
                             </div>
 
-                            <dl class="mt-5 space-y-4 border-t border-white/10 pt-5">
+                            <!-- <dl class="mt-5 space-y-4 border-t border-white/10 pt-5">
                                 <div>
                                     <dt class="text-xs text-zinc-400">
                                         Vehicle Sales Department
@@ -128,7 +121,7 @@
                                             077-644-0251
                                         </a>
                                     </dd>
-                                </div>
+                                </div> -->
                             </dl>
                         </div>
                     </div>
@@ -152,7 +145,7 @@
 
                             <a href="mailto:customercare@toyotailocossur.com"
                                 class="mt-2 block break-words text-sm leading-6 text-zinc-300 underline-offset-4 hover:text-white hover:underline">
-                                customercare@toyotailocossur.com
+                                customer.relations@toyota-baguio.com
                             </a>
                         </div>
                     </div>
