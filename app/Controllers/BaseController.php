@@ -29,6 +29,8 @@ abstract class BaseController extends Controller
 
     // protected $session;
 
+    protected $configs;
+
     /**
      * @return void
      */
@@ -50,10 +52,11 @@ abstract class BaseController extends Controller
         });
 
         $config = new ConfigModel();
+        $this->configs = $config->getConfigs();
 
         service('renderer')->setData([
             'modules' => $sidebar,
-            'config' => $config->where('config_code', 'title')->first()
+            'config' => $config->getConfigs()
         ]);
     }
 }

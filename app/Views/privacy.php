@@ -6,7 +6,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <h1 class="text-4xl md:text-5xl font-bold mt-4 mb-4">Privacy Policy</h1>
         <p class="text-gray-300 text-base sm:text-lg max-w-2xl">
-            How Toyota Ilocos-Sur collects, uses, and protects your personal information
+            How collects, uses, and protects your personal information
             in compliance with Republic Act No. 10173, the Data Privacy Act of 2012.
         </p>
     </div>
@@ -23,8 +23,8 @@
                     <span class="text-red-600 font-semibold text-xs uppercase tracking-wider">Section 01</span>
                     <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-2 mb-4">Overview</h2>
                     <div class="space-y-4 text-gray-600 leading-relaxed">
-                        <p>Toyota Ilocos Sur is committed to ensuring the confidentiality of your information under Republic Act No. 10173 or the "Data Privacy Act of 2012" and will exert reasonable efforts to protect against its unauthorized use or disclosure.</p>
-                        <p>In compliance with the requirements of the Data Privacy Act and its implementing rules and regulations, we would like to inform you how we handle and protect the data you provide in the course of your transaction/s with Toyota Ilocos Sur.</p>
+                        <p><?= $config['SITE_NAME']->value ?> is committed to ensuring the confidentiality of your information under Republic Act No. 10173 or the "Data Privacy Act of 2012" and will exert reasonable efforts to protect against its unauthorized use or disclosure.</p>
+                        <p>In compliance with the requirements of the Data Privacy Act and its implementing rules and regulations, we would like to inform you how we handle and protect the data you provide in the course of your transaction/s with <?= $config['SITE_NAME']->value ?>.</p>
                     </div>
                 </div>
 
@@ -32,7 +32,7 @@
                     <span class="text-red-600 font-semibold text-xs uppercase tracking-wider">Section 02</span>
                     <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-2 mb-4">How We Use Your Data</h2>
                     <div class="space-y-4 text-gray-600 leading-relaxed">
-                        <p>These data, which include your personal or sensitive personal information, may be collected, processed, stored, updated, or disclosed by Toyota Ilocos Sur:</p>
+                        <p>These data, which include your personal or sensitive personal information, may be collected, processed, stored, updated, or disclosed by <?= $config['SITE_NAME']->value ?>:</p>
                         <ul class="space-y-3">
                             <li class="flex gap-3">
                                 <svg class="size-5 text-red-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -50,13 +50,13 @@
                                 <svg class="size-5 text-red-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                 </svg>
-                                <span>to offer and provide new or related products and services of Toyota Ilocos Sur or third parties; and</span>
+                                <span>to offer and provide new or related products and services of <?= $config['SITE_NAME']->value ?> or third parties; and</span>
                             </li>
                             <li class="flex gap-3">
                                 <svg class="size-5 text-red-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                 </svg>
-                                <span>to comply with Toyota Ilocos Sur's internal policies and its reporting obligations to governmental authorities under applicable laws.</span>
+                                <span>to comply with <?= $config['SITE_NAME']->value ?>'s internal policies and its reporting obligations to governmental authorities under applicable laws.</span>
                             </li>
                         </ul>
                     </div>
@@ -66,8 +66,8 @@
                     <span class="text-red-600 font-semibold text-xs uppercase tracking-wider">Section 03</span>
                     <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-2 mb-4">Sharing &amp; Promotions</h2>
                     <div class="space-y-4 text-gray-600 leading-relaxed">
-                        <p>Toyota Ilocos Sur also processes your past, current and future transactions in providing you with promotional incentives (i.e. pre-qualification to new products or services, and the like), as part of our aim to provide superior customer service.</p>
-                        <p>Your personal information may also be shared with affiliates, agents, representatives, or third party service providers of Toyota Ilocos Sur. By patronizing Toyota products and services, you hereby grant your express and continuing consent to allow the aforementioned groups to process your personal information and use it as may deem necessary.</p>
+                        <p><?= $config['SITE_NAME']->value ?> also processes your past, current and future transactions in providing you with promotional incentives (i.e. pre-qualification to new products or services, and the like), as part of our aim to provide superior customer service.</p>
+                        <p>Your personal information may also be shared with affiliates, agents, representatives, or third party service providers of <?= $config['SITE_NAME']->value ?>. By patronizing Toyota products and services, you hereby grant your express and continuing consent to allow the aforementioned groups to process your personal information and use it as may deem necessary.</p>
                     </div>
                 </div>
 
@@ -123,7 +123,7 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <a href="mailto:customercare@toyotailocossur.com" class="group bg-gray-100 rounded-lg p-5 hover:bg-gray-900 transition-colors">
                             <p class="text-xs uppercase tracking-wide text-gray-500 group-hover:text-gray-400 mb-1">Customer Relations</p>
-                            <p class="font-semibold text-gray-900 group-hover:text-white transition-colors">customercare@toyotailocossur.com</p>
+                            <p class="font-semibold text-gray-900 group-hover:text-white transition-colors">customer.relations@toyota-baguio.com</p>
                         </a>
                         <a href="mailto:customercare@toyotailocossur.com" class="group bg-gray-100 rounded-lg p-5 hover:bg-gray-900 transition-colors">
                             <p class="text-xs uppercase tracking-wide text-gray-500 group-hover:text-gray-400 mb-1">Data Protection Officer</p>

@@ -1,6 +1,6 @@
 services:
   server:
-    container_name: toyotadagupan
+    container_name: toyota-baguio
     userns_mode: "host"
     build:
       context: ./ # The directory to use as build context (current folder)

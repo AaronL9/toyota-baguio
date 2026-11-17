@@ -41,8 +41,8 @@ try {
         $routes->get("admin/vehicles/{$uri}/(:segment)", "Admin\Variant::edit/$1/{$row['vehicle_no']}");
         $routes->put("admin/vehicles/{$uri}/(:segment)", "Admin\Variant::update/$1/{$row['vehicle_no']}");
 
-        $routes->get("admin/vehicles/{$uri}/variant/specifications/(:segment)", "Admin\Variant::specifications/$1");
-        $routes->post("admin/vehicles/{$uri}/variant/specifications/(:segment)", "Admin\Variant::specifications/$1");
+        // $routes->get("admin/vehicles/{$uri}/variant/specifications/(:segment)", "Admin\Variant::specifications/$1");
+        // $routes->post("admin/vehicles/{$uri}/variant/specifications/(:segment)", "Admin\Variant::specifications/$1");
 
         $routes->get("admin/vehicles/{$uri}/variant/photo/(:segment)", "Admin\Variants::getPhoto/$1");
         $routes->post("admin/vehicles/{$uri}/variant/photo/(:segment)", "Admin\Variants::postUploadPhoto/$1");

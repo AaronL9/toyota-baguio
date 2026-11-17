@@ -6,14 +6,14 @@ $vite = new Vite();
 $tags = $vite->tags(
     "main.ts",
 )
-    ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en" data-page="<?= isset($page) ? $page : "" ?>">
 
 <head>
     <meta charset="UTF-8">
-    <title><?= $config->config_title ?></title>
+    <title><?= $config['SITE_NAME']->value ?></title>
     <meta name="description" content="The small framework with powerful features">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="/favicon.ico">
@@ -155,7 +155,7 @@ $tags = $vite->tags(
             </div>
             <hr class="my-6 border-red-600" />
             <div class="flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 gap-2">
-                <p>© 2026 <?= $config->config_title ?>. All rights reserved.</p>
+                <p>© 2026 <?= $config['SITE_NAME']->value ?>. All rights reserved.</p>
                 <p>Powered by BStech Solutions</p>
             </div>
         </div>

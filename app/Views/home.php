@@ -379,7 +379,7 @@
                             <div class="space-y-1 text-xs text-gray-300">
                                 <p><?= $agents[$i]->agent_email ?></p>
                                 <p><?= $agents[$i]->agent_contact ?></p>
-                                <div class="flex gap-3 items-center">
+                                <!-- <div class="flex gap-3 items-center">
                                     <a href="#" rel="noreferrer" target="_blank"
                                         class="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
                                         <span class="sr-only">Facebook</span>
@@ -410,7 +410,7 @@
                                             </path>
                                         </svg>
                                     </a>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -427,7 +427,7 @@
                             <div class="space-y-1 text-xs text-gray-300">
                                 <p><?= $agents[$i]->agent_email ?></p>
                                 <p><?= $agents[$i]->agent_contact ?></p>
-                                <div class="flex gap-3 items-center">
+                                <!-- <div class="flex gap-3 items-center">
                                     <a href="#" rel="noreferrer" target="_blank"
                                         class="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
                                         <span class="sr-only">Facebook</span>
@@ -458,7 +458,7 @@
                                             </path>
                                         </svg>
                                     </a>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>

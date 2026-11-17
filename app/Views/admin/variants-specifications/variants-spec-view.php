@@ -170,13 +170,13 @@
   </div>
 
   <!-- Footer Actions -->
-  <div class="flex items-center justify-between pt-4">
+  <!-- <div class="flex items-center justify-between pt-4">
     <div class="flex gap-2">
       <button type="button" class="py-2 px-4 text-sm font-medium rounded-lg border border-gray-200 text-gray-600 hover:bg-gray-50">
         Cancel
       </button>
     </div>
-  </div>
+  </div> -->
 </div>
 
 <?= $this->endSection() ?>

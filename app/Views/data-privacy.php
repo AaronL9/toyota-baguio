@@ -74,7 +74,7 @@
         x-ref="scrollContainer">
 
         <div class="p-4 rounded-xl bg-secondary-50 border border-secondary-100 text-[13px] text-secondary-700 leading-relaxed">
-          Toyota Ilocos Sur is committed to ensuring the confidentiality of your information under Republic Act No. 10173 or the "Data Privacy Act of 2012" and will exert reasonable efforts to protect against its unauthorized use or disclosure.
+          Toyota Baguio is committed to ensuring the confidentiality of your information under Republic Act No. 10173 or the "Data Privacy Act of 2012" and will exert reasonable efforts to protect against its unauthorized use or disclosure.
         </div>
       </div>
 
@@ -87,7 +87,7 @@
             x-model="consentTerms"
             class="mt-0.5 shrink-0 size-4 rounded border-primary-300 checked:bg-accent-600 checked:border-accent-600 focus:ring-2 focus:ring-accent-400 focus:ring-offset-0 cursor-pointer transition-colors">
           <span class="text-[13px] leading-relaxed text-secondary-700">
-            I have read and understood this Data Privacy Notice and agree to Toyota Ilocos Sur's
+            I have read and understood this Data Privacy Notice and agree to Toyota Baguio
             <a href="/privacy-policy" target="_blank" class="text-accent-600 font-medium hover:underline underline-offset-2">Terms of Service</a>.
           </span>
         </label>
@@ -100,7 +100,7 @@
             x-model="consentPrivacy"
             class="mt-0.5 shrink-0 size-4 rounded border-primary-300 checked:bg-accent-600 checked:border-accent-600 focus:ring-2 focus:ring-accent-400 focus:ring-offset-0 cursor-pointer transition-colors">
           <span class="text-[13px] leading-relaxed text-secondary-700">
-            I consent to Toyota Ilocos Sur collecting and using my vehicle details and contact information
+            I consent to Toyota Baguio collecting and using my vehicle details and contact information
             for the purposes described above.
           </span>
         </label>

@@ -61,7 +61,8 @@
             <p class="text-xs text-gray-500 mt-0.5">Select a category and specification type to add</p>
         </div>
         <form @submit.prevent="addSpecification($event)" id="variant-specification" method="post" class="px-5 py-4">
-            <input type="hidden" name="csrf_token" :value="csrf_token">
+            <!-- <input type="hidden" name="csrf_token" :value="csrf_token"> -->
+            <?= csrf_field() ?>
             <input type="hidden" name="variant" value="<?= $id ?>">
             <div class="grid grid-cols-1 sm:grid-cols-[1fr_1fr_auto] gap-3 items-end">
                 <div>

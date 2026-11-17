@@ -59,7 +59,10 @@ Alpine.data("variant_specifications", (csrf_token = "", id = "") => ({
 
         try {
             const response = await fetch(form.action, {
-                method: form.method || "POST",
+                headers: {
+                    "X-Requested-With": "XMLHttpRequest"
+                },
+                method: form.method,
                 body: new FormData(form),
             });
 
