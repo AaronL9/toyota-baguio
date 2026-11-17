@@ -7,7 +7,7 @@
     <div class="w-full max-w-md">
       <!-- Logo -->
       <div class="text-center mb-8">
-        <img class="mx-auto h-40 w-auto object-contain" src="/img/ilocos-sur-white-DHIjoD-c.png" alt="Logo">
+        <img class="mx-auto h-40 w-auto object-contain" src="/static/toyota-baguio.png" alt="Logo">
         <h2 class="mt-6 text-3xl text-white">
           Sign in to your account
         </h2>

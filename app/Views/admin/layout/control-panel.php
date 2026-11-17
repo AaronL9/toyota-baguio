@@ -13,8 +13,8 @@
         </button>
         <div class="flex items-center gap-4">
           <div class="leading-tight">
-            <p class="text-sm font-semibold text-gray-800 tracking-wide">Toyota Ilocos Sur</p>
-            <p class="text-[10px] text-gray-400 tracking-widest uppercase">Dealer Management System</p>
+            <p class="text-sm font-semibold text-gray-800 tracking-wide">Toyota Baguio
+              <!-- <p class="text-[10px] text-gray-400 tracking-widest uppercase">Dealer Management System</p> -->
           </div>
         </div>
       </div>
@@ -143,8 +143,8 @@
         <!-- <img src="img/black-toyotailocossur-logo.png" alt="Toyota Ilocos Sur" class="h-8 w-auto object-contain"> -->
         <!-- <span class="block w-px h-7 bg-gray-200"></span> -->
         <div class="leading-tight">
-          <p class="text-sm font-semibold text-gray-800 tracking-wide">Toyota Ilocos Sur</p>
-          <p class="text-[10px] text-gray-400 tracking-widest uppercase">Dealer Management System</p>
+          <p class="text-sm font-semibold text-gray-800 tracking-wide">Toyota Baguio</p>
+          <!-- <p class="text-[10px] text-gray-400 tracking-widest uppercase">Dealer Management System</p> -->
         </div>
       </div>
 
