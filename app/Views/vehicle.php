@@ -11,7 +11,7 @@
 <div x-data="vehiclePage()">
     <!-- Main Layout -->
     <main class="flex-1 max-w-7xl mx-auto px-6 md:px-8 py-16 md:py-20">
-        <div x-data="{ activeImage: '/img/variants/<?= $cc->variant_filename ?>', isLoading: true}"
+        <div x-data="{ activeImage: 'uploads/img/variants/<?= $cc->variant_filename ?>', isLoading: true}"
             class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start lg:items-center">
             <!-- Left: Vehicle Image -->
             <div class="w-full flex justify-center">
@@ -36,7 +36,7 @@
                     <div class="flex justify-center lg:justify-start gap-3">
                         <?php foreach ($cc->assets as $asset): ?>
                             <button
-                                @click="activeImage = '/img/variants/<?= $asset['variant_filename'] ?>'; isLoading: true;"
+                                @click="activeImage = 'uploads/img/variants/<?= $asset['variant_filename'] ?>'; isLoading: true;"
                                 style="background-color: <?= $asset['color_hex_value'] ?>;"
                                 class="w-8 h-8 rounded-full border hover:scale-95"></button>
                         <?php endforeach; ?>
@@ -109,7 +109,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             <!-- Card -->
             <?php foreach ($variants as $row): ?>
-                <div x-data="{ activeImage: '/img/variants/<?= $row->variant_filename ?>', isLoading: true}"
+                <div x-data="{ activeImage: 'uploads/img/variants/<?= $row->variant_filename ?>', isLoading: true}"
                     class="space-y-4">
                     <div class="w-full max-w-4xl aspect-21/9 lg:aspect-video flex justify-center items-center">
                         <img @load="isLoading = false" x-cloak x-show="!isLoading" :src="activeImage"
@@ -124,7 +124,7 @@
                     <div class="flex justify-center items-center lg:justify-start gap-3">
                         <span class="text-xs text-primary-700">Available in</span>
                         <?php foreach ($row->assets as $asset): ?>
-                            <button @click="activeImage = '/img/variants/<?= $asset['variant_filename'] ?>'; isLoading = true"
+                            <button @click="activeImage = 'uploads/img/variants/<?= $asset['variant_filename'] ?>'; isLoading = true"
                                 style="background-color: <?= $asset['color_hex_value'] ?>;"
                                 class="w-4 h-4 rounded-full border"></button>
                         <?php endforeach; ?>
