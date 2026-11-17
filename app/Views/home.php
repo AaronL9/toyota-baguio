@@ -98,7 +98,7 @@
                             class="absolute inset-x-8 bottom-8 h-20 rounded-full bg-gray-200 opacity-50 blur-2xl">
                         </div>
 
-                        <img src="/img/variants/<?= $row->variant_filename ?>"
+                        <img src="uploads/img/variants/<?= $row->variant_filename ?>"
                             alt="<?= htmlspecialchars($row->vehicle_title, ENT_QUOTES, 'UTF-8') ?>" loading="lazy"
                             class="relative h-48 w-full object-contain transition-transform duration-500 motion-safe:group-hover:scale-105" />
                     </div>
