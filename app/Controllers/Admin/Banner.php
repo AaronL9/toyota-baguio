@@ -8,6 +8,7 @@ use CodeIgniter\HTTP\ResponseInterface;
 
 class Banner extends AdminBaseController
 {
+    /** @var BannerModel */
     protected $model;
 
     public function __construct()
@@ -15,14 +16,34 @@ class Banner extends AdminBaseController
         $this->model = model(BannerModel::class);
     }
 
-    public function getIndex()
+    /**
+     * Show list of banner
+     *
+     * @return void
+     */
+    public function index()
     {
         $data['banners'] = $this->model->findAll();
 
-        return view('admin/banner/banner-view', $data);
+        return view('admin/banner/banner', $data);
     }
 
-    public function postStore()
+    /**
+     * Show banner upload form
+     *
+     * @return void
+     */
+    public function new()
+    {
+        return view('admin/banner/banner_create');
+    }
+
+    /**
+     * Upload a banner
+     *
+     * @return void
+     */
+    public function create()
     {
         $data = $this->request->getPost();
 
@@ -53,11 +74,8 @@ class Banner extends AdminBaseController
             $filename = "{$img->getFilename()}.{$img->getExtension()}";
             $this->model->insert([
                 'banner_photo' => $filename,
-                'banner_title' => $data['banner_title'],
-                'banner_heading' => $data['banner_heading'],
-                'banner_heading' => $data['banner_subheading'],
             ]);
-            $img->move(FCPATH . "img/banners", $filename, true);
+            $img->move(FCPATH . "uploads/img/banners", $filename, true);
 
             return redirect()->back()->with('success', 'The fila has been uploaded successfully');
         }
@@ -67,10 +85,17 @@ class Banner extends AdminBaseController
             ->with("error", "The file has already been moved.");
     }
 
-    public function deleteIndex($id = null)
+    /**
+     * Delete banner
+     *
+     * @param string|null $id
+     * @return void
+     */
+    public function delete($id = null)
     {
+
         if (!$id) {
-            return redirect()->back();
+            return redirect()->back()->with('error', 'Fail to delete');
         }
 
         $banner = $this->model->find($id);
@@ -80,7 +105,7 @@ class Banner extends AdminBaseController
         }
 
         // 1. Delete existing files with same base name (any extension)
-        foreach (glob(FCPATH . "img/banners/{$banner->banner_photo}") as $existingFile) {
+        foreach (glob(FCPATH . "uploads/img/banners/{$banner->banner_photo}") as $existingFile) {
             unlink($existingFile);
         }
 

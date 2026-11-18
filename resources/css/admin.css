@@ -14,6 +14,12 @@
 @import "../../node_modules/@preline/select/variants.css";
 @import "../../node_modules/@preline/select/theme.css";
 
+/* @preline/carousel */
+@source "../../node_modules/@preline/carousel/*.js";
+@import "../../node_modules/@preline/carousel/variants.css";
+@import "../../node_modules/@preline/carousel/theme.css";
+
+
 /* Plugins */
 @plugin "@tailwindcss/forms";
 

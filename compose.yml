@@ -5,6 +5,9 @@ services:
     build:
       context: ./ # The directory to use as build context (current folder)
       target: backend-dev # Dockerfile build stage to target (multi-stage build)
+      args:
+        HOST_UID: ${HOST_UID:-1000}
+        HOST_GID: ${HOST_GID:-1000}
     networks:
       - shared-network
     volumes:

@@ -2,6 +2,7 @@
 
 namespace App\Controllers\Admin;
 
+use App\Models\ConfigModel;
 use App\Models\ModulesModel;
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\RequestInterface;
@@ -54,9 +55,15 @@ class AdminBaseController extends Controller
             service('renderer')->setData([
                 'modules' => $sidebar,
                 'access' => $admin['modules'],
-                'js' => $this->js
+                'js' => $this->js,
             ]);
         }
+
+        $config = new ConfigModel();
+
+        service('renderer')->setData([
+            'config' => $config->getConfigs()
+        ]);
 
         // cache()->delete('modules');
     }

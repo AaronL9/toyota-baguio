@@ -8,39 +8,21 @@
   }' class="relativeS">
     <div class="hs-carousel relative overflow-hidden w-full h-75 sm:h-100 md:h-125 lg:h-150 shadow-lg">
 
-        <div class="text-red-900"> Test</div>
         <div
             class="hs-carousel-body absolute bottom-0 start-0 top-0 flex flex-nowrap opacity-0 transition-transform duration-700">
 
-            <!-- Slide 1 -->
-            <div class="hs-carousel-slide">
-                <div class="relative h-full">
-                    <img src="/static/banners/carousel-1.jpg" alt="Mountain landscape"
-                        class="h-full w-full object-cover" />
-                    <div class="absolute inset-0 flex items-center justify-center px-16 text-center text-white">
-                    </div>
-                </div>
-            </div>
-            <div class="absolute inset-0 bg-black/30"></div>
-
-            <!-- Slide 2 -->
-            <div class="hs-carousel-slide">
-                <div class="relative h-full">
-                    <img src="/static/banners/carousel-2.jpg" alt="Beach at sunset"
-                        class="h-full w-full object-cover" />
-
-                    <div class="absolute inset-0 bg-black/40"></div>
-
-                    <div class="absolute inset-0 flex items-center justify-center px-16 text-center text-white">
-                        <div>
-                            <h2 class="text-4xl font-bold md:text-6xl">
-                                Discover beautiful places
-                            </h2>
-                            <p class="mt-4 text-lg">Make every journey memorable.</p>
+            <?php foreach ($banners as $row): ?>
+                <div class="hs-carousel-slide">
+                    <div class="relative h-full">
+                        <img src="/uploads/img/banners/<?= $row->banner_photo ?>" alt="Mountain landscape"
+                            class="h-full w-full object-cover" />
+                        <div class="absolute inset-0 flex items-center justify-center px-16 text-center text-white">
                         </div>
                     </div>
                 </div>
-            </div>
+
+                <div class="absolute inset-0 bg-black/10"></div>
+            <?php endforeach; ?>
         </div>
     </div>
 

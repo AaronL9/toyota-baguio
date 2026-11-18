@@ -25,7 +25,7 @@ $tags = $vite->tags(
     <?= $this->include('data-privacy') ?>
 
     <header id="header"
-        class="fixed inset-x-0 top-0 z-50 bg-[#969696]/[0.41] backdrop-blur-[18px] backdrop-saturate-[185%] rounded-[0px] border border-white/[0.03] shadow-xl text-white transition-colors duration-300">
+        class="sticky inset-x-0 top-0 z-50 bg-black/80 backdrop-blur-[18px] backdrop-saturate-[185%] rounded-[0px] border-b border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.08)] text-white transition-colors duration-300">
         <nav class="mx-auto flex flex-wrap items-center justify-between max-w-7xl px-6 py-4">
 
             <!-- Logo -->
@@ -98,10 +98,7 @@ $tags = $vite->tags(
         </nav>
     </header>
 
-
-
     <?= $this->renderSection("mainContent") ?>
-
 
     <!-- FOOTER -->
     <footer class="py-8 bg-black text-white mt-auto">
@@ -161,7 +158,7 @@ $tags = $vite->tags(
         </div>
     </footer>
 
-    <script>
+    <!-- <script>
         const header = document.getElementById("header");
         const logo = document.getElementById("header-logo");
 
@@ -185,7 +182,7 @@ $tags = $vite->tags(
         window.addEventListener("pageshow", updateHeader);
 
         updateHeader();
-    </script>
+    </script> -->
 
     <?= $tags->js ?>
 </body>

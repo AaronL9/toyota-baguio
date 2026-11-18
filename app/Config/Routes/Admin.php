@@ -19,6 +19,12 @@ $routes->group('admin', ['filter' => 'adminlogin'], function ($routes) {
 
     $routes->get('vehicles/new', "Admin\Vehicle::new");
     $routes->get('vehicles/edit/(:segment)', "Admin\Vehicle::edit/$1");
+
+    $routes->get('banners', "Admin\Banner::index");
+    $routes->post('banners', "Admin\Banner::create");
+    $routes->delete('banners/(:segment)', "Admin\Banner::delete/$1");
+
+    $routes->get('banners/new', "Admin\Banner::new");
 });
 
 try {
