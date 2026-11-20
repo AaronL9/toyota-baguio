@@ -25,6 +25,13 @@ $routes->group('admin', ['filter' => 'adminlogin'], function ($routes) {
     $routes->delete('banners/(:segment)', "Admin\Banner::delete/$1");
 
     $routes->get('banners/new', "Admin\Banner::new");
+
+    $routes->get('employees', "Admin\Employee::index");
+    $routes->get('employees/new', "Admin\Employee::new");
+    $routes->get('employees/(:segment)/edit', "Admin\Employee::edit/$1");
+    $routes->get('employees/(:segment)/profile-picture', "Admin\Employee::profilePicture/$1");
+
+    $routes->get('cms', 'Admin\ContentManagement::index');
 });
 
 try {

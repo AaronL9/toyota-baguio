@@ -140,6 +140,22 @@
                                     <path d="m14.5 4-5 16" />
                                 </svg>
                             </button>
+                            <button class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full text-foreground hover:bg-muted-hover focus:outline-hidden focus:bg-muted-focus disabled:opacity-50 disabled:pointer-events-none" type="button" data-hs-editor-color title="color">
+                                <svg class="shrink-0 size-4" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 3a9 9 0 1 0 0 18h1.5a2.5 2.5 0 0 0 1.8-4.3 1.5 1.5 0 0 1 1.1-2.7H18a3 3 0 0 0 3-3c0-4.4-4-8-9-8Z" />
+                                    <circle cx="7.5" cy="10" r=".8" fill="currentColor" />
+                                    <circle cx="10.5" cy="6.5" r=".8" fill="currentColor" />
+                                    <circle cx="15" cy="7" r=".8" fill="currentColor" />
+                                </svg>
+
+                                <input
+                                    type="color"
+                                    data-hs-editor-color
+                                    value="#000000"
+                                    class="absolute inset-0 size-full cursor-pointer opacity-0"
+                                    title="Text color" />
+                            </button>
                         </div>
 
                         <!-- Editor area -->

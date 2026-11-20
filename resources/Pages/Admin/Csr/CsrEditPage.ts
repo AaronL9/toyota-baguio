@@ -8,6 +8,7 @@ import Link from "@tiptap/extension-link";
 import BulletList from "@tiptap/extension-bullet-list";
 import OrderedList from "@tiptap/extension-ordered-list";
 import ListItem from "@tiptap/extension-list-item";
+import { Color, TextStyleKit } from '@tiptap/extension-text-style'
 import axios from "axios";
 import Swal from "sweetalert2";
 
@@ -22,6 +23,8 @@ function initEditor(content: string): Editor {
         },
         extensions: [
             StarterKit.configure(),
+            TextStyleKit,
+            Color,
             Placeholder.configure({
                 placeholder: "Describe the CSR activity in detail…",
                 emptyNodeClass: "before:text-muted-foreground-1",
@@ -82,6 +85,16 @@ function initEditor(content: string): Editor {
 
     toolbarActions.forEach(({ sel, fn }) => {
         document.querySelector(`#csr-editor ${sel}`)?.addEventListener("click", fn);
+    });
+
+    const colorPicker = document.querySelector<HTMLInputElement>(
+        "#csr-editor [data-hs-editor-color]"
+    );
+
+    colorPicker?.addEventListener("input", (event) => {
+        const color = (event.target as HTMLInputElement).value;
+
+        editor.chain().focus().setColor(color).run();
     });
 
     return editor;

@@ -17,6 +17,13 @@ class Home extends BaseController
     public function getIndex(): string
     {
         $db = db_connect();
+
+        $sql = "SELECT * FROM cms_section_contents a
+                LEFT JOIN cms_sections b ON a.section_id = b.section_id
+                WHERE section_type = 'hero'";
+
+        $data['hero'] = $db->query($sql)->getRow();
+
         $data["banners"] = $db->table("banners")->select()->get()->getResult();
         $data["vehicles"] = $this->vehicleModel->getVehiclePhotos();
         $data["agents"] = $db

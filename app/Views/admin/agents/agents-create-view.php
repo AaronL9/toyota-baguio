@@ -118,11 +118,9 @@
 
     </fieldset>
 
-    <!-- Social Media -->
-    <fieldset class="flex flex-col gap-5 bg-base-200 border-base-300 rounded-box rounded-lg border border-gray-100 px-6 py-6 mt-4">
+    <!-- <fieldset class="flex flex-col gap-5 bg-base-200 border-base-300 rounded-box rounded-lg border border-gray-100 px-6 py-6 mt-4">
       <legend class="text-base font-semibold text-gray-800 px-1 mb-1">Social Media</legend>
 
-      <!-- Facebook -->
       <div>
         <label for="fb" class="block text-sm font-medium mb-2">Facebook</label>
         <div class="relative">
@@ -138,7 +136,6 @@
         </div>
       </div>
 
-      <!-- Instagram -->
       <div>
         <label for="ig" class="block text-sm font-medium mb-2">Instagram</label>
         <div class="relative">
@@ -154,7 +151,6 @@
         </div>
       </div>
 
-      <!-- Twitter / X -->
       <div>
         <label for="tw" class="block text-sm font-medium mb-2">X (Twitter)</label>
         <div class="relative">
@@ -170,7 +166,7 @@
         </div>
       </div>
 
-    </fieldset>
+    </fieldset> -->
 
     <!-- Submit -->
     <div class="flex justify-end pt-4">

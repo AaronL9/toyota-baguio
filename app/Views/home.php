@@ -21,7 +21,7 @@
                     </div>
                 </div>
 
-                <div class="absolute inset-0 bg-black/10"></div>
+                <!-- <div class="absolute inset-0"></div> -->
             <?php endforeach; ?>
         </div>
     </div>
@@ -175,13 +175,11 @@
         class="mx-auto w-screen max-w-7xl px-4 py-16 sm:px-6 sm:py-24 md:grid md:grid-cols-2 md:items-center md:gap-4 lg:px-8 lg:py-32">
         <div class="max-w-prose text-left text-white">
             <h1 class="text-4xl font-bold sm:text-5xl">
-                Driven by
-                <strong class="text-red-500"> Innovation. </strong>
-                Powered by Results
+                <?= $hero->title ?>
             </h1>
 
             <p class="mt-4 text-base sm:text-lg/relaxed text-white/90">
-                Welcome to Toyota Baguio
+                <?= $hero->subtitle ?>
             </p>
         </div>
     </div>
