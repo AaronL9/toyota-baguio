@@ -2,45 +2,53 @@
 <?= $this->section("mainContent"); ?>
 
 <!-- Carousel -->
-<section id="home" data-hs-carousel='{
-    "loadingClasses": "opacity-0",
-    "isInfiniteLoop": true
-  }' class="relativeS">
-    <div class="hs-carousel relative overflow-hidden w-full h-75 sm:h-100 md:h-125 lg:h-150 shadow-lg">
+<section id="home" class="relative"
+    data-hs-carousel='{
+        "loadingClasses": "opacity-0",
+        "dotsItemClasses": "hs-carousel-active:bg-white hs-carousel-active:border-white size-3 border border-white/70 rounded-full cursor-pointer",
+        "isAutoPlay": true,
+        "isInfiniteLoop": true
+    }'>
 
-        <div
-            class="hs-carousel-body absolute bottom-0 start-0 top-0 flex flex-nowrap opacity-0 transition-transform duration-700">
+    <div class="hs-carousel relative w-full h-75 sm:h-100 md:h-125 lg:h-150 overflow-hidden shadow-lg">
+
+        <!-- Carousel Body -->
+        <div class="hs-carousel-body absolute top-0 bottom-0 start-0 flex flex-nowrap opacity-0 transition-transform duration-700">
 
             <?php foreach ($banners as $row): ?>
                 <div class="hs-carousel-slide">
                     <div class="relative h-full">
-                        <img src="/uploads/img/banners/<?= $row->banner_photo ?>" alt="Mountain landscape"
+                        <img src="/uploads/img/banners/<?= esc($row->banner_photo) ?>"
+                            alt="Banner"
                             class="h-full w-full object-cover" />
-                        <div class="absolute inset-0 flex items-center justify-center px-16 text-center text-white">
-                        </div>
                     </div>
                 </div>
-
-                <!-- <div class="absolute inset-0"></div> -->
             <?php endforeach; ?>
+
         </div>
+        <!-- End Carousel Body -->
     </div>
 
     <!-- Previous -->
     <button type="button"
-        class="hs-carousel-prev absolute inset-y-0 start-0 flex items-center justify-center w-12 text-white hover:bg-black/30 transition">
-        <svg class="size-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        class="hs-carousel-prev hs-carousel-disabled:opacity-50 hs-carousel-disabled:cursor-default absolute top-1/2 start-3 z-10 inline-flex size-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white hover:bg-black/60 transition focus:outline-hidden">
+        <svg class="shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="m15 18-6-6 6-6" />
         </svg>
+        <span class="sr-only">Previous</span>
     </button>
 
     <!-- Next -->
     <button type="button"
-        class="hs-carousel-next absolute inset-y-0 end-0 flex items-center justify-center w-12 text-white hover:bg-black/30 transition">
-        <svg class="size-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        class="hs-carousel-next hs-carousel-disabled:opacity-50 hs-carousel-disabled:cursor-default absolute top-1/2 end-3 z-10 inline-flex size-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white hover:bg-black/60 transition focus:outline-hidden">
+        <span class="sr-only">Next</span>
+        <svg class="shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="m9 18 6-6-6-6" />
         </svg>
     </button>
+
+    <!-- Pagination -->
+    <div class="hs-carousel-pagination absolute bottom-3 start-0 end-0 z-10 flex justify-center gap-x-2"></div>
 </section>
 
 <!-- Vehicle Cards Section -->

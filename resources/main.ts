@@ -1,5 +1,6 @@
-import 'preline';
 import './style.css';
+import 'preline';
+import '@preline/carousel';
 
 import Alpine from 'alpinejs';
 window.Alpine = Alpine;
