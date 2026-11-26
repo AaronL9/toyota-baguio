@@ -197,16 +197,6 @@
                 alt="Toyota vehicle at Toyota Baguio City"
                 fetchpriority="high"
                 class="absolute inset-0 h-full w-full object-cover object-center">
-
-            <!-- Floating card -->
-            <div class="absolute bottom-0 left-0 right-0 bg-white/95 p-5 backdrop-blur sm:left-auto sm:right-0 sm:w-80">
-                <p class="text-sm font-semibold">Ready to see it in person?</p>
-                <p class="mt-1 text-sm text-zinc-600">Visit our showroom.</p>
-                <a href="<?= base_url('test-drive') ?>"
-                    class="mt-3 inline-flex text-sm font-semibold text-red-600 hover:text-red-700 focus:outline-none focus-visible:underline">
-                    Schedule a visit
-                </a>
-            </div>
         </div>
     </div>
 </section>
@@ -382,6 +372,15 @@
 
         <!-- Right Content - Text and Button -->
 
+    </div>
+
+    <!-- Maps Section -->
+    <div class="mx-auto mt-12 w-full max-w-7xl overflow-hidden rounded-none border border-gray-200 bg-gray-100">
+        <iframe title="Map showing Toyota Dagupan City"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.0291181121506!2d120.59169890000001!3d16.4233475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3391a3df53e2a88f%3A0xd8273179d9eda176!2sToyota%20Baguio%20City!5e0!3m2!1sen!2sph!4v1795673307435!5m2!1sen!2sph"
+            class="block h-72 w-full border-0 md:h-96" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+        </iframe>
     </div>
 </section>
 
