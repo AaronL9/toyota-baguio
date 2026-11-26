@@ -160,161 +160,99 @@
                 </svg>
             </a>
         </div>
-
     </div>
 </section>
 
+<section aria-labelledby="hero-title" class="bg-white text-zinc-900">
 
-<!-- HERO SECTION -->
-<section class="relative lg:grid lg:h-screen lg:place-content-center">
-    <div class="absolute inset-0 -z-10">
-        <img src="/static/toyota-bg.jpg" class="h-full w-full object-cover" alt="" />
-        <div class="absolute inset-0 bg-black/60"></div>
-    </div>
-    <div
-        class="mx-auto w-screen max-w-7xl px-4 py-16 sm:px-6 sm:py-24 md:grid md:grid-cols-2 md:items-center md:gap-4 lg:px-8 lg:py-32">
-        <div class="max-w-prose text-left text-white">
-            <h1 class="text-4xl font-bold sm:text-5xl">
-                <?= $hero->title ?>
-            </h1>
-
-            <p class="mt-4 text-base sm:text-lg/relaxed text-white/90">
-                <?= $hero->subtitle ?>
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- HERO / EDITORIAL SECTION -->
-<section aria-labelledby="hero-title" class="bg-white pt-24 text-zinc-900">
-    <!-- Row 1: Text Left / Image Right -->
-    <div class="grid items-stretch lg:grid-cols-2">
+    <!-- Hero: full width, text left / image right -->
+    <div class="grid bg-zinc-50 lg:grid-cols-12">
 
         <!-- Text -->
-        <div class="flex items-center px-6 py-14 sm:px-12 lg:px-16 xl:px-24">
-            <div class="mx-auto w-full max-w-lg">
-                <h1 id="hero-title"
-                    class="text-3xl font-semibold uppercase leading-tight tracking-[0.06em] sm:text-4xl xl:text-5xl">
-                    Driven by
-                    <span class="mt-2 block text-red-600 mb-10">
-                        Innovation.
-                    </span>
-                </h1>
+        <div class="flex flex-col justify-center px-6 py-14 sm:px-12 lg:col-span-5 lg:py-20 xl:px-20">
+            <p class="text-sm font-medium text-zinc-500">Welcome to Toyota Baguio City</p>
 
-                <p class="text-base leading-8 text-zinc-600 sm:text-lg">
-                    Welcome to Toyota Baguio City
-                </p>
+            <h1 id="hero-title"
+                class="mt-4 text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl xl:text-6xl">
+                Driven by <span class="text-red-600">Innovation.</span>
+                <span class="block">Powered by Results.</span>
+            </h1>
+
+            <p class="mt-6 max-w-md text-base leading-7 text-zinc-600 sm:text-lg">
+                Discover a new perspective on every drive. Your next chapter begins with Toyota Baguio.
+            </p>
+
+            <!-- CTAs -->
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a href="<?= base_url('vehicles') ?>"
+                    class="inline-flex items-center justify-center bg-red-600 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-red-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2">
+                    Browse vehicles
+                </a>
+                <a href="<?= base_url('test-drive') ?>"
+                    class="inline-flex items-center justify-center border border-zinc-300 bg-white px-7 py-3.5 text-sm font-semibold text-zinc-900 transition hover:border-zinc-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 focus-visible:ring-offset-2">
+                    Book a test drive
+                </a>
             </div>
         </div>
 
         <!-- Image -->
-        <div class="relative min-h-72 overflow-hidden sm:min-h-96 lg:min-h-[520px]">
-            <img src="/static/toyota-bg.jpg" alt="" fetchpriority="high"
+        <div class="relative min-h-80 sm:min-h-[26rem] lg:col-span-7 lg:min-h-[600px]">
+            <img src="<?= base_url('static/toyota-bg.jpg') ?>"
+                alt="Toyota vehicle at Toyota Baguio City"
+                fetchpriority="high"
                 class="absolute inset-0 h-full w-full object-cover object-center">
-        </div>
-    </div>
 
-    <!-- Space Between Editorial Rows -->
-    <div aria-hidden="true" class="h-8 sm:h-12 lg:h-20"></div>
-
-    <!-- Row 2: Image Left / Text Right -->
-    <div class="grid items-stretch lg:grid-cols-2">
-
-        <!-- Text: Appears First on Mobile -->
-        <div class="flex items-center px-6 py-14 sm:px-12
-                   lg:col-start-2 lg:row-start-1 lg:px-16 xl:px-24">
-            <div class="mx-auto w-full max-w-lg">
-                <h2 class="text-3xl font-semibold uppercase leading-tight tracking-[0.06em] sm:text-4xl xl:text-5xl">
-                    Powered by
-                    <span class="mt-2 block">
-                        Results.
-                    </span>
-                </h2>
-
-                <p class="text-base leading-8 text-zinc-600 sm:text-lg">
-                    Discover a new perspective on every drive.
-                    Your next chapter begins with Toyota Baguio.
-                </p>
+            <!-- Floating card -->
+            <div class="absolute bottom-0 left-0 right-0 bg-white/95 p-5 backdrop-blur sm:left-auto sm:right-0 sm:w-80">
+                <p class="text-sm font-semibold">Ready to see it in person?</p>
+                <p class="mt-1 text-sm text-zinc-600">Visit our showroom or reserve a time online.</p>
+                <a href="<?= base_url('test-drive') ?>"
+                    class="mt-3 inline-flex text-sm font-semibold text-red-600 hover:text-red-700 focus:outline-none focus-visible:underline">
+                    Schedule a visit
+                </a>
             </div>
         </div>
-
-        <!-- Image: Replace with a Second Photo if Available -->
-        <div class="relative min-h-72 overflow-hidden sm:min-h-96
-                   lg:col-start-1 lg:row-start-1 lg:min-h-[520px]">
-            <img src="/static/toyota-bg.jpg" alt="" loading="lazy"
-                class="absolute inset-0 h-full w-full object-cover object-right">
-        </div>
     </div>
-
-    <div aria-hidden="true" class="h-8 sm:h-12 lg:h-20"></div>
 </section>
 
+<br />
+<br />
+
 <!-- SERVICE SECTION -->
-<section id="services" class="py-16 md:py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <!-- Right -->
-            <div class="relative">
-                <div class="rounded-none overflow-hidden shadow-2xl">
-                    <img src="/img/maintenance-GiBGTARx.jpg" alt="Toyota Service Center"
-                        class="w-full h-auto object-cover" />
-                </div>
-            </div>
-            <!-- Left -->
-            <div>
-                <h2 class="text-4xl md:text-5xl font-bold mt-4 mb-6 text-gray-900">
-                    Schedule Toyota Service
-                </h2>
+<section id="services" aria-labelledby="service-title" class="bg-zinc-900 text-white">
+    <div class="grid lg:grid-cols-12">
 
-                <p class="text-gray-600 text-lg mb-6">
-                    Keep your Toyota running at peak performance with our expert
-                    maintenance services. Schedule your appointment online and
-                    experience professional care from certified technicians.
-                </p>
+        <!-- Image (left on desktop, first on mobile) -->
+        <div class="relative min-h-72 sm:min-h-96 lg:col-span-7 lg:min-h-[560px]">
+            <img src="<?= base_url('img/maintenance-GiBGTARx.jpg') ?>"
+                alt="Toyota Service Center"
+                loading="lazy"
+                class="absolute inset-0 h-full w-full object-cover object-center">
+        </div>
 
-                <!-- <ul class="space-y-4 mb-8">
-                    <li class="flex items-center gap-3">
-                        <svg class="w-6 h-6 text-red-600 shrink-0" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
-                            </path>
-                        </svg>
-                        <span class="text-gray-700">Certified Toyota Technicians</span>
-                    </li>
+        <!-- Text -->
+        <div class="flex flex-col justify-center px-6 py-14 sm:px-12 lg:col-span-5 lg:py-20 xl:px-20">
+            <h2 id="service-title"
+                class="text-3xl font-semibold leading-[1.1] tracking-tight sm:text-4xl xl:text-5xl">
+                Schedule Toyota Service
+            </h2>
 
-                    <li class="flex items-center gap-3">
-                        <svg class="w-6 h-6 text-red-600 shrink-0" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
-                            </path>
-                        </svg>
-                        <span class="text-gray-700">Genuine Toyota Parts</span>
-                    </li>
+            <p class="mt-6 max-w-md text-base leading-7 text-zinc-300 sm:text-lg">
+                Keep your Toyota running at peak performance with our expert maintenance services.
+                Schedule your appointment online and experience professional care from certified technicians.
+            </p>
 
-                    <li class="flex items-center gap-3">
-                        <svg class="w-6 h-6 text-red-600 shrink-0" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
-                            </path>
-                        </svg>
-                        <span class="text-gray-700">Quick &amp; Convenient Scheduling</span>
-                    </li>
-                </ul> -->
-
-                <a href="/schedule"
-                    class="group inline-flex min-h-12 items-center justify-center gap-4 rounded-none bg-red-600 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-600">
-
+            <div class="mt-8">
+                <a href="<?= base_url('schedule') ?>"
+                    class="group inline-flex min-h-12 items-center justify-center gap-4 bg-red-600 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-red-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900">
                     <span>Schedule Maintenance</span>
-
                     <svg xmlns="http://www.w3.org/2000/svg"
-                        class="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                        class="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1 motion-reduce:transition-none"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6" />
                     </svg>
                 </a>
             </div>
-
-
         </div>
     </div>
 </section>
