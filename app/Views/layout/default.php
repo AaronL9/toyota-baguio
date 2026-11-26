@@ -146,7 +146,7 @@ $tags = $vite->tags(
 
                 <div style="width: fit-content"
                     class="w-25 text-gray-300 mt-5 flex flex-col justify-self-end items-end">
-                    <img class="h-30 m-auto" src="static/dop-2.png">
+                    <img class="h-30 m-auto" src="static/dop2025.png">
                     <a class="text-center w-full text-[10px]" href="privacy-policy">Privacy Policy</a>
                 </div>
             </div>
