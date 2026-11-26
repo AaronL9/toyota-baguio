@@ -12,6 +12,8 @@ class ContentManagement extends AdminBaseController
     {
         $model = new ContentManagementModel();
 
-        return view('admin/cms');
+        $data['cms'] = $model->getAllCms();
+
+        return view('admin/cms', $data);
     }
 }

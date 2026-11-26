@@ -19,6 +19,20 @@ class ContentManagementModel extends Model
         'updated_at'
     ];
 
+    public function getAllCms()
+    {
+        $sql = <<<SQL
+            SELECT * FROM cms_section_contents a
+            LEFT JOIN cms_sections b ON a.section_id = b.section_id
+            SQL;
+
+        $query = $this->db->query($sql);
+
+        $result = $query->getResult();
+
+        return $result;
+    }
+
     public function getWebContent()
     {
         $sql = <<<SQL

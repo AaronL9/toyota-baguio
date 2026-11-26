@@ -23,7 +23,6 @@ $routes->group('admin', ['filter' => 'adminlogin'], function ($routes) {
     $routes->get('banners', "Admin\Banner::index");
     $routes->post('banners', "Admin\Banner::create");
     $routes->delete('banners/(:segment)', "Admin\Banner::delete/$1");
-
     $routes->get('banners/new', "Admin\Banner::new");
 
     $routes->get('employees', "Admin\Employee::index");

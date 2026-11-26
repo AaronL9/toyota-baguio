@@ -8,9 +8,11 @@
                 <path d="m9 18 6-6-6-6" />
             </svg></li>
         <li><a href="/admin/vehicles/<?= url_title($cc->vehicle_title, '-', true) ?>" class="hover:text-gray-800 transition-colors"><?= esc($cc->vehicle_title) ?></a></li>
-        <li><svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <li>
+            <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="m9 18 6-6-6-6" />
-            </svg></li>
+            </svg>
+        </li>
         <li class="font-medium text-gray-800">Add Variant</li>
     </ol>
 </nav>
