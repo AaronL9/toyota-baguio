@@ -63,7 +63,7 @@ class Banner extends AdminBaseController
             $msg = $this->validator->getError('userfile');
 
             return redirect()
-                ->back()
+                ->to('admin/banners/new')
                 ->with("error", $msg);
         }
 
@@ -77,11 +77,11 @@ class Banner extends AdminBaseController
             ]);
             $img->move(FCPATH . "uploads/img/banners", $filename, true);
 
-            return redirect()->back()->with('success', 'The fila has been uploaded successfully');
+            return redirect()->to('admin/banners')->with('success', 'The file has been uploaded successfully');
         }
 
         return redirect()
-            ->back()
+            ->to('admin/banners')
             ->with("error", "The file has already been moved.");
     }
 
@@ -95,13 +95,13 @@ class Banner extends AdminBaseController
     {
 
         if (!$id) {
-            return redirect()->back()->with('error', 'Fail to delete');
+            return redirect()->to('admin/banners')->with('error', 'Fail to delete');
         }
 
         $banner = $this->model->find($id);
 
         if (!$banner) {
-            return redirect()->back()->with('error', 'Data cannot be deleted');
+            return redirect()->to('admin/banners')->with('error', 'Data cannot be deleted');
         }
 
         // 1. Delete existing files with same base name (any extension)
@@ -111,6 +111,6 @@ class Banner extends AdminBaseController
 
         $this->model->delete($id);
 
-        return redirect()->back()->with('success', 'Successfully remove');
+        return redirect()->to('admin/banners')->with('success', 'Successfully remove');
     }
 }
