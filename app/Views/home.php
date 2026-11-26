@@ -224,7 +224,7 @@
 
         <!-- Image (left on desktop, first on mobile) -->
         <div class="relative min-h-72 sm:min-h-96 lg:col-span-7 lg:min-h-[560px]">
-            <img src="<?= base_url('img/maintenance-GiBGTARx.jpg') ?>"
+            <img src="<?= base_url('static/maintenance-GiBGTARx.jpg') ?>"
                 alt="Toyota Service Center"
                 loading="lazy"
                 class="absolute inset-0 h-full w-full object-cover object-center">
