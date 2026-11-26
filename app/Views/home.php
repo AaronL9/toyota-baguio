@@ -184,13 +184,9 @@
 
             <!-- CTAs -->
             <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a href="<?= base_url('vehicles') ?>"
+                <a href="<?= base_url('showroom') ?>"
                     class="inline-flex items-center justify-center bg-red-600 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-red-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2">
                     Browse vehicles
-                </a>
-                <a href="<?= base_url('test-drive') ?>"
-                    class="inline-flex items-center justify-center border border-zinc-300 bg-white px-7 py-3.5 text-sm font-semibold text-zinc-900 transition hover:border-zinc-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 focus-visible:ring-offset-2">
-                    Book a test drive
                 </a>
             </div>
         </div>
@@ -205,7 +201,7 @@
             <!-- Floating card -->
             <div class="absolute bottom-0 left-0 right-0 bg-white/95 p-5 backdrop-blur sm:left-auto sm:right-0 sm:w-80">
                 <p class="text-sm font-semibold">Ready to see it in person?</p>
-                <p class="mt-1 text-sm text-zinc-600">Visit our showroom or reserve a time online.</p>
+                <p class="mt-1 text-sm text-zinc-600">Visit our showroom.</p>
                 <a href="<?= base_url('test-drive') ?>"
                     class="mt-3 inline-flex text-sm font-semibold text-red-600 hover:text-red-700 focus:outline-none focus-visible:underline">
                     Schedule a visit
