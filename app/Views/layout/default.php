@@ -23,9 +23,8 @@ $tags = $vite->tags(
 
 <body class=" flex flex-col min-h-screen">
     <?= $this->include('data-privacy') ?>
-
     <header id="header"
-        class="fixed inset-x-0 top-0 z-50 bg-black/80 backdrop-blur-[18px] backdrop-saturate-[185%] rounded-[0px] border-b border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.08)] text-white transition-colors duration-300">
+        class=" <?php echo uri_string() == '' ? 'fixed bg-black/80' : 'sticky bg-black' ?> inset-x-0 top-0 z-50 backdrop-blur-[18px] backdrop-saturate-[185%] rounded-[0px] border-b border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.08)] text-white transition-colors duration-300">
         <nav class="mx-auto flex flex-wrap items-center justify-between max-w-7xl px-6 py-4">
 
             <!-- Logo -->
