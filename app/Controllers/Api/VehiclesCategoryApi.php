@@ -35,7 +35,7 @@ class VehiclesCategoryApi extends ResourceController
             ->select()
             ->like("cat_title", $search, "both")
             ->where("cat_delete", 0)
-            ->orderBy('cat_title')
+            ->orderBy('cat_order')
             ->paginate(10, "default", $page);
 
         $pageDetails = $this->model->pager->getDetails();
@@ -80,6 +80,16 @@ class VehiclesCategoryApi extends ResourceController
             'category_name' => 'required',
             'order' => 'required'
         ];
+
+        if ($this->model->where('cat_order', $json['order'])->first()) {
+            return $this->respond([
+                "csrf_token" => csrf_hash(),
+                "message" => "Validation Error",
+                "errors" => [
+                    "order" => "The order number is already taken"
+                ]
+            ], 422);
+        }
 
         if (!$this->validate($rules)) {
             return $this->respond([

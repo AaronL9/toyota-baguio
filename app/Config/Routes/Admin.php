@@ -31,6 +31,10 @@ $routes->group('admin', ['filter' => 'adminlogin'], function ($routes) {
     $routes->get('employees/(:segment)/profile-picture', "Admin\Employee::profilePicture/$1");
 
     $routes->get('cms', 'Admin\ContentManagement::index');
+    $routes->get('cms/hero-section', 'Admin\ContentManagement::editHeroSection');
+
+    // $routes->get('categories', 'Admin\Category::index');
+    // $routes->get('categories/new', 'Admin\Category::create');
 });
 
 try {

@@ -47,4 +47,23 @@ class ContentManagementModel extends Model
 
         return $result;
     }
+
+    public function getHeroSectionContent()
+    {
+        $sql = <<<SQL
+            SELECT * FROM configs
+            WHERE config_code IN 
+                ('hero_title', 
+                'hero_subtitle', 
+                'hero_button_text', 
+                'hero_button_link', 
+                'hero_background_image')
+            SQL;
+
+        $query = $this->db->query($sql);
+
+        $result = $query->getResult();
+
+        return $result;
+    }
 }
